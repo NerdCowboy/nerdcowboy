@@ -70,7 +70,6 @@ class Email extends Component {
 
   renderSuggestion = suggestion => {
     const classes = classnames(
-      'u.mls',
       'u.font-size-0-75',
       'u.font-weight-normal',
       'button.link'
