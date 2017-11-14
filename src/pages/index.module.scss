@@ -1,0 +1,43 @@
+@import '../global-styles/vars/global';
+
+.howdy {
+  margin: rem(40px) 0;
+
+  @include media('<xs') {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.logo-emblem {
+  width: 100%;
+  max-width: rem(200px);
+  min-width: rem(150px);
+}
+
+.star {
+  color: $orange;
+}
+
+// 1. Max-width of .reading-width + .project-img
+.latest-project-wrapper {
+  max-width: calc(40ch + rem(700px)); //1
+}
+
+.latest-project {
+  @include media('<800px') {
+    flex-direction: column;
+  }
+}
+
+.latest-project-body {
+  @include media('<800px') {
+    margin-top: $spaceM;
+  }
+}
+
+.project-img {
+  width: 100%;
+  max-width: rem(700px);
+  min-width: rem(300px);
+}

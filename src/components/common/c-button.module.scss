@@ -1,0 +1,45 @@
+@import '../../global-styles/vars/global';
+
+.button {
+  background-color: $black;
+  border: 0;
+  border-radius: rem(4px);
+  outline: none;
+  color: $white;
+  cursor: pointer;
+  font-family: $serif;
+  font-weight: normal;
+  padding: rem(8px) rem(10px);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: shade($black, 90%);
+  }
+}
+
+.button--primary {
+  background-color: $orange;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken(saturate($orange, 8%), 13%);
+  }
+}
+
+.link {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: $orange;
+  line-height: 1;
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken(saturate($orange, 8%), 13%);
+  }
+  transition: color 0.2s ease-in-out;
+}

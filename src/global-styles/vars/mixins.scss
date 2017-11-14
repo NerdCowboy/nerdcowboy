@@ -1,0 +1,25 @@
+@import "~sass-rem";
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+/// Slightly lighten a color
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix($color, white, $percentage);
+}
+
+/// Slightly darken a color
+/// @author Hugo Giraudel
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix($color, black, $percentage);
+}
