@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MailCheck from 'react-mailcheck'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import u from '../../../global-styles/utilities.module.scss'
@@ -8,6 +9,10 @@ import alerts from '../alerts.module.scss'
 import button from '../c-button.module.scss'
 
 class Email extends Component {
+  static propTypes = {
+    handleChange: PropTypes.func.isRequired,
+  }
+
   state = {
     inputText: '',
     hasValidEmail: true,
@@ -26,8 +31,13 @@ class Email extends Component {
   }
 
   hasStoppedTyping = () => {
-    this.hasStartedTyping()
+    this.clearTypingTimer()
     this.isDoneTyping = window.setTimeout(this.validateEmail, 2000)
+  }
+
+  hasBlurred = () => {
+    this.isDoneTyping = true
+    this.validateEmail()
   }
 
   clearTypingTimer = () => {
@@ -42,6 +52,7 @@ class Email extends Component {
     const validation = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
     const emailTest = validation.test(this.state.inputText)
     this.setState({ hasValidEmail: emailTest })
+    this.props.handleChange(emailTest)
   }
 
   useSuggestedEmail = suggestion => {
@@ -113,6 +124,7 @@ class Email extends Component {
                 onChange={event => {
                   this.handleChange(event)
                 }}
+                onBlur={this.hasBlurred}
               />
             </label>
             {this.renderError()}
