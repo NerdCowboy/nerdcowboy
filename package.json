@@ -3,7 +3,9 @@
   "description": "Nerd Cowboy",
   "version": "1.0.0",
   "author": "Brent Larson <taulars@gmail.com>",
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "",
   "main": "n/a",
   "scripts": {
@@ -21,6 +23,7 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sass": "^1.0.13",
     "gatsby-plugin-twitter": "^1.0.12",
+    "immutability-helper": "^2.5.1",
     "include-media": "^1.4.9",
     "lodash": "^4.17.4",
     "poly-fluid-sizing": "^1.1.0",
