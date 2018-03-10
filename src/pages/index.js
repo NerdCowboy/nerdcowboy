@@ -38,14 +38,11 @@ const IndexPage = () => (
         </p>
         <p>
           Based out of Tucson, Arizona, I’ve been in the industry for over a
-          decade, specializing in UI/UX design of web applications.
-        </p>
-        <p>
-          I currently work full-time for [24]7, but I do take on projects that
-          interest me, on occasion.
+          decade, specializing in UI/UX design and front-end development.
         </p>
         <p styleName="u.pbm">
-          If you reckon you’d you like to work with me, let’s have a chat.
+          I'm currently looking for remote or Tucson-based positions. If you
+          reckon you’d you like to work with me, let’s have a chat.
         </p>
         <Link styleName="cButton.button cButton.button--primary" to="/contact/">
           Get in touch
@@ -71,19 +68,43 @@ const IndexPage = () => (
         />
         <div styleName="oMedia.body u.reading-width home.latest-project-body">
           <h2 styleName="u.mbs">[24]7 Predictive Search Bidding</h2>
-          <p>UI/UX Design, UX Research, Frontend Development</p>
+
+          <h3 styleName="u.mbn">Objective</h3>
           <p>
-            I started working for [24]7 (formerly Campanja) in 2015. I design
-            and help develop a web application that helps manage predictive
-            bidding and campaign managment for search ads like AdWords. I work
-            with 3 teams based out of Sweden and India and am able to balance my
-            time effectively so that I can support both design and frontend
-            development needs for all my teams.
+            Build a responsive dashboard application for account managers and
+            clients that allows them to manage the automated bidding process for
+            search ads, do simple campaign management tasks, and create
+            performance reports.
+          </p>
+
+          <h3 styleName="u.mbn">Role</h3>
+          <p>
+            UI/UX Design, Front-end Development, User Research, User Testing
+          </p>
+
+          <h3 styleName="u.mbn">Process</h3>
+          <p>
+            I discussed a problem or proposed feature with stakeholders and
+            proceeded to create the initial mockups. I shared the mockups with
+            stakeholders and account managers to gather feedback and updated
+            them accordingly.
           </p>
           <p>
-            I work closely with our project managers and account managers to
-            create designs that meet everyone’s expectations and quickly adapt
-            them if any issues are found.
+            If it was a more complicated feature, I would try to do a user test
+            using a clickable prototype with some of our account managers to
+            make sure it was still easy to use. Unfortunately, we didn’t have a
+            lot of access to our users. As a substitute, I used the service
+            FullStory to watch users sessions, which was extremely helpful in
+            guring out issues or user patterns that we could streamline.
+          </p>
+          <p>
+            Then, depending on where I and the other front-end developers were
+            at, I’d either code out a skeleton in JSX and Sass, or I’d have them
+            get the logic working and I would come in behind them and esh out
+            the styles. As I progressed in my Javascript/React skills, I started
+            building out UI components with some logic, which greatly helped
+            speed up development velocity and allowed me to fix other UX issues
+            that were a bit too advanced for me when I started.
           </p>
         </div>
       </div>
