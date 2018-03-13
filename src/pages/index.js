@@ -85,26 +85,26 @@ const IndexPage = () => (
           <h3 styleName="u.mbn">Process</h3>
           <p>
             I discussed a problem or proposed feature with stakeholders and
-            proceeded to create the initial mockups. I shared the mockups with
-            stakeholders and account managers to gather feedback and updated
-            them accordingly.
+            proceeded to create initial mockups. Mockups were shared with
+            stakeholders and account managers for feedback and updated
+            accordingly.
           </p>
           <p>
-            If it was a more complicated feature, I would try to do a user test
-            using a clickable prototype with some of our account managers to
-            make sure it was still easy to use. Unfortunately, we didn’t have a
-            lot of access to our users. As a substitute, I used the service
-            FullStory to watch users sessions, which was extremely helpful in
-            guring out issues or user patterns that we could streamline.
+            For more complicated features, I’d run a user test using a clickable
+            prototype with some of our account managers. Unfortunately, we
+            didn’t have a lot of access to our users, so we weren’t able to many
+            user tests with them. As a substitute, I used the service FullStory
+            to watch users sessions, which was extremely helpful in figuring out
+            issues or user patterns that could be streamlined.
           </p>
           <p>
-            Then, depending on where I and the other front-end developers were
-            at, I’d either code out a skeleton in JSX and Sass, or I’d have them
-            get the logic working and I would come in behind them and esh out
-            the styles. As I progressed in my Javascript/React skills, I started
-            building out UI components with some logic, which greatly helped
-            speed up development velocity and allowed me to fix other UX issues
-            that were a bit too advanced for me when I started.
+            Depending on where I and the other front-end developers were at, I
+            would either code out a skeleton in JSX and Sass, or I would have
+            them get the logic working and come in behind them and flesh out
+            styles. As I progressed in my Javascript/React skills, I started
+            building out UI components with some logic, which greatly helped to
+            speed up the development process and allowed me to fix other UX
+            issues that were a bit too advanced for me when I started.
           </p>
         </div>
       </div>
