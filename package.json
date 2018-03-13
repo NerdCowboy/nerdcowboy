@@ -27,6 +27,7 @@
     "include-media": "^1.4.9",
     "lodash": "^4.17.5",
     "poly-fluid-sizing": "^1.1.0",
+    "react-helmet": "^5.2.0",
     "react-mailcheck": "^1.2.0",
     "sass-rem": "^2.0.1"
   },
