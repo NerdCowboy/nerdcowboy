@@ -12,7 +12,7 @@ import forms from '../components/common/forms.module.scss'
 // Images
 import brent from '../../static/images/brent.jpg'
 
-class AboutPage extends Component {
+class ContactPage extends Component {
   state = {
     name: '',
     message: '',
@@ -108,4 +108,4 @@ class AboutPage extends Component {
   }
 }
 
-export default AboutPage
+export default ContactPage
