@@ -9,9 +9,6 @@ import u from '../global-styles/utilities.module.scss'
 import btn from '../components/common/c-button.module.scss'
 import forms from '../components/common/forms.module.scss'
 
-// Images
-import brent from '../../static/images/brent.jpg'
-
 class ContactPage extends Component {
   state = {
     name: '',

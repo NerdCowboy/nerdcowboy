@@ -9,9 +9,9 @@ import u from '../global-styles/utilities.module.scss'
 import home from './index.module.scss'
 
 // Images
-import small247 from '../../static/images/projects/247/247@0.5x.jpg'
-import medium247 from '../../static/images/projects/247/247@1x.jpg'
-import large247 from '../../static/images/projects/247/247@2x.jpg'
+import small247 from '../media/images/projects/247/247@0.5x.jpg'
+import medium247 from '../media/images/projects/247/247@1x.jpg'
+import large247 from '../media/images/projects/247/247@2x.jpg'
 
 const IndexPage = () => (
   <div styleName="u.page-wrapper u.center">

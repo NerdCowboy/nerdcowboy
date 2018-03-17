@@ -3,10 +3,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 // Styles
-import u from '../global-styles/utilities.module.scss'
+import u from '../../global-styles/utilities.module.scss'
 
 // Images
-import brent from '../../static/images/brent.jpg'
+import brent from './images/brent.jpg'
 
 const AboutPage = () => (
   <div styleName="u.page-wrapper u.reading-width">
