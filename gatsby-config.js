@@ -4,7 +4,7 @@ const offlineOptions = {
   staticFileGlobs: [
     `${rootDir}**/*.{js,woff2}`,
     `${rootDir}index.html`,
-    `${rootDir}favicons/manifest.json`,
+    // `${rootDir}favicons/manifest.json`,
     `${rootDir}offline-plugin-app-shell-fallback/index.html`,
   ],
   stripPrefix: rootDir,
@@ -47,6 +47,10 @@ module.exports = {
         exclude: `\/global\/`,
       },
     },
+    // Everything in /static will be copied to an equivalent
+    // directory in /public during development and build, so
+    // assuming your favicons are in /static/favicons,
+    // you can reference them here
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -61,27 +65,27 @@ module.exports = {
         display: `minimal-ui`,
         icons: [
           {
-            src: `./src/media/favicons/apple-touch-icon.png`,
+            src: `/favicons/apple-touch-icon.png`,
             sizes: `180x180`,
             type: `image/png`,
           },
           {
-            src: `./src/media/favicons/favicon-32x32.png`,
+            src: `/favicons/favicon-32x32.png`,
             sizes: `32x32`,
             type: `image/png`,
           },
           {
-            src: `./src/media/favicons/favicon-16x16.png`,
+            src: `/favicons/favicon-16x16.png`,
             sizes: `16x16`,
             type: `image/png`,
           },
           {
-            src: `./src/media/favicons/android-chrome-192x192.png`,
+            src: `/favicons/android-chrome-192x192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `./src/media/favicons/android-chrome-256x256.png`,
+            src: `/favicons/android-chrome-256x256.png`,
             sizes: `256x256`,
             type: `image/png`,
           },

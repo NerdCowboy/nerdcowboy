@@ -38,23 +38,23 @@ const TemplateWrapper = ({ children }) => (
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href="./media/favicons/apple-touch-icon.png"
+        href="./favicons/apple-touch-icon.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="./media/favicons/favicon-32x32.png"
+        href="./favicons/favicon-32x32.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="./media/favicons/favicon-16x16.png"
+        href="./favicons/favicon-16x16.png"
       />
       <link
         rel="mask-icon"
-        href="./media/favicons/safari-pinned-tab.svg"
+        href="./favicons/safari-pinned-tab.svg"
         color="#ed5e27"
       />
       <meta name="apple-mobile-web-app-title" content="Nerd Cowboy" />
