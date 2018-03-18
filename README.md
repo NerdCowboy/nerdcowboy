@@ -1,13 +1,7 @@
-# gatsby-starter-default
-The default Gatsby starter
+# nerdcowboy
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+Nerd Cowboy is the personal website of Brent Larson.
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-example-site
-```
+Since viewing source these days can be really difficult with modern tooling, I've published my site so you can take a gander. 
 
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+If you find any issues, please [send me a message](https://nerdcowboy.com/contact) or submit a pull request. I'm still learning, so be kind :)
