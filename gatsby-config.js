@@ -31,7 +31,7 @@ const offlineOptions = {
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Nerd Cowboy - UI/UX Desinger & Frontend Developer`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
