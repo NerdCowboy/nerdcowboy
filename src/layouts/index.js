@@ -11,6 +11,8 @@ import layout from './layout.module.scss'
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet>
+      {/* Need to add language to html tag for better accessibility */}
+      <html lang="en" />
       <title>Nerd Cowboy - UI/UX Designer & Frontend Developer</title>
       <meta charSet="utf-8" />
       <meta description="Home of UI/UX Designer & Frontend Developer Brent Larson" />
