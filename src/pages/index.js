@@ -92,10 +92,10 @@ const IndexPage = () => (
           <p>
             For more complicated features, I’d run a user test using a clickable
             prototype with some of our account managers. Unfortunately, we
-            didn’t have a lot of access to our users, so we weren’t able to many
-            user tests with them. As a substitute, I used the service FullStory
-            to watch users sessions, which was extremely helpful in figuring out
-            issues or user patterns that could be streamlined.
+            didn’t have a lot of access to our users, so we weren’t able to do
+            many user tests with them. As a substitute, I used the service
+            FullStory to watch users sessions, which was extremely helpful in
+            figuring out issues or user patterns that could be streamlined.
           </p>
           <p>
             Depending on where I and the other front-end developers were at, I
