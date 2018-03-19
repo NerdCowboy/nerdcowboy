@@ -31,7 +31,7 @@ const offlineOptions = {
 
 module.exports = {
   siteMetadata: {
-    title: `Nerd Cowboy - UI/UX Desinger & Frontend Developer`,
+    title: `Nerd Cowboy - UI/UX Designer & Frontend Developer`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
