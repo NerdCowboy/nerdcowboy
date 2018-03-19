@@ -15,7 +15,10 @@ const TemplateWrapper = ({ children }) => (
       <html lang="en" />
       <title>Nerd Cowboy - UI/UX Designer & Frontend Developer</title>
       <meta charSet="utf-8" />
-      <meta description="Home of UI/UX Designer & Frontend Developer Brent Larson" />
+      <meta
+        name="description"
+        content="Home of UI/UX Designer & Frontend Developer Brent Larson"
+      />
       <meta keywords="UI Designer, UX Designer, Frontend Developer, Brent Larson, Web Design" />
 
       {/* Make Mobile Friendly */}
