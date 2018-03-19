@@ -67,10 +67,10 @@
   &:hover,
   &:focus,
   &:active {
+    color: $black;
     text-decoration: underline;
   }
 }
-
 
 // Social Icons
 .social {
