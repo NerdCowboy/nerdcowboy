@@ -4,7 +4,7 @@ import btn from '../components/common/c-button.module.scss'
 
 const NotFoundPage = () => (
   <div styleName="u.page-wrapper u.reading-width">
-    <h1>This page is a goner</h1>
+    <h1 styleName="u.mtxl">This page is a goner</h1>
     <p>Real sorry, but there's nothing to see in these parts.</p>
     <p>The page you tried to visit may have been moved or deleted.</p>
     <p>
