@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import Header from './Header'
 
+import u from '../global-styles/utilities.module.scss'
 import layout from './layout.module.scss'
 
 const TemplateWrapper = ({ children }) => (
@@ -65,7 +66,13 @@ const TemplateWrapper = ({ children }) => (
     <div>
       {children()}
       <div styleName="layout.footer">
-        {new Date().getFullYear()} © Nerd Cowboy, LLC
+        <span styleName="u.mrs">
+          {new Date().getFullYear()} © Nerd Cowboy, LLC
+        </span>
+        •
+        <a styleName="u.mls" href="https://github.com/NerdCowboy/nerdcowboy">
+          View Source
+        </a>
       </div>
     </div>
   </div>
