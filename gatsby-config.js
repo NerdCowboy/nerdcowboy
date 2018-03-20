@@ -58,6 +58,11 @@ module.exports = {
             sizes: `256x256`,
             type: `image/png`,
           },
+          {
+            src: `/favicons/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
         ],
       },
     },

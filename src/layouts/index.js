@@ -40,7 +40,7 @@ const TemplateWrapper = ({ children }) => (
         rel="stylesheet"
       />
 
-      {/* Favicons & Manifest */}
+      {/* Favicons */}
       <link
         rel="apple-touch-icon"
         sizes="180x180"
