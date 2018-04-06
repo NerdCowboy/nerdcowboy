@@ -21,7 +21,11 @@ const AboutPage = () => (
       I started out my career as a web designer, back when that meant you did
       just about everything. I now definitely fall more on the design side of
       things skills-wise, but I'm continuing to learn more development and will
-      hopefully be one of those fabled, full-stack designer 🦄 "unicorns" soon.
+      hopefully be one of those fabled, 🦄{' '}
+      <a href="https://uxdesign.cc/the-spectrum-of-digital-design-roles-in-2018-3286390a9966">
+        "unicorn" designers
+      </a>{' '}
+      soon.
     </p>
 
     <p>
