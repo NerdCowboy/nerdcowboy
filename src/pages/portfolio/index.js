@@ -24,7 +24,7 @@ import smallSyCara from '../../media/images/projects/sycara-local/sycara-local@0
 import mediumSyCara from '../../media/images/projects/sycara-local/sycara-local@1x.jpg'
 import largeSyCara from '../../media/images/projects/sycara-local/sycara-local@2x.jpg'
 
-const AboutPage = () => (
+const PortfolioPage = () => (
   <div styleName="u.page-wrapper">
     <h1 styleName="u.mbs u.mtxl">Portfolio</h1>
 
@@ -199,4 +199,4 @@ const AboutPage = () => (
   </div>
 )
 
-export default AboutPage
+export default PortfolioPage
