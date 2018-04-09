@@ -40,6 +40,11 @@ const Header = () => (
           </Link>
         </li>
         <li styleName="layout.item">
+          <Link styleName="layout.link" to="/portfolio">
+            portfolio
+          </Link>
+        </li>
+        <li styleName="layout.item">
           <Link styleName="layout.link" to="/contact">
             contact
           </Link>

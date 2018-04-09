@@ -7,6 +7,7 @@ import oMedia from '../components/common/style-objects/media.module.scss'
 import cButton from '../components/common/c-button.module.scss'
 import u from '../global-styles/utilities.module.scss'
 import home from './index.module.scss'
+import project from '../components/common/Project/project.module.scss'
 
 // Images
 import small247 from '../media/images/projects/247/247@0.5x.jpg'
@@ -50,14 +51,14 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <div styleName="home.latest-project-wrapper">
+    <div>
       <h1 styleName="u.mbm u.mtl">
         <span styleName="home.star">★</span> Latest Project
       </h1>
 
-      <div styleName="oMedia.media home.latest-project">
+      <div styleName="oMedia.media project.item">
         <img
-          styleName="oMedia.figure home.project-img"
+          styleName="oMedia.figure project.img"
           alt="Screenshot of [24]7 Predictive Search Bidding"
           src={`${small247}`}
           srcSet={`
@@ -66,8 +67,8 @@ const IndexPage = () => (
           `}
           sizes="18.75rem, 37.5rem"
         />
-        <div styleName="oMedia.body u.reading-width home.latest-project-body">
-          <h2 styleName="u.mbs">[24]7 Predictive Search Bidding</h2>
+        <div styleName="oMedia.body u.reading-width project.body">
+          <h2 styleName="project.title">[24]7 Predictive Search Bidding</h2>
 
           <h3 styleName="u.mbn">Objective</h3>
           <p>

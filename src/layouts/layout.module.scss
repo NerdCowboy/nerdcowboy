@@ -11,7 +11,7 @@
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  @include media('>340px') {
+  @include media('>475px') {
     flex-direction: row;
   }
   font-family: $serif;
@@ -23,7 +23,7 @@
   margin: 0;
   margin-top: -5px;
 
-  @include media('>340px') {
+  @include media('>475px') {
     margin-right: auto; //1
   }
 }
@@ -32,7 +32,7 @@
 .logo-wrapper {
   flex: 0 0 100%;
 
-  @include media('<340px') {
+  @include media('<475px') {
     margin-right: 0;
   }
 
@@ -76,14 +76,14 @@
 .social {
   margin: 10px 0;
 
-  @include media('>340px') {
+  @include media('>475px') {
     margin: 0;
   }
 }
 
 .find-me {
   display: none;
-  @include media('>500px') {
+  @include media('>620px') {
     display: inline-block;
   }
 }
