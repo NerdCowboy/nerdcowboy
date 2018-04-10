@@ -1,7 +1,7 @@
 @import '../../global-styles/vars/global';
 
 .button {
-  background-color: $black;
+  background-color: tint($black, 90%);
   border: 0;
   border-radius: rem(4px);
   outline: none;
@@ -17,7 +17,7 @@
   &:focus,
   &:active {
     color: $white;
-    background-color: shade($black, 90%);
+    background-color: tint($black, 80%);
   }
 }
 

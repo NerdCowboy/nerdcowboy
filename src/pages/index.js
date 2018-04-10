@@ -48,6 +48,9 @@ const IndexPage = () => (
         <Link styleName="cButton.button cButton.button--primary" to="/contact/">
           Get in touch
         </Link>
+        <a styleName="cButton.button u.mlm" href="/brent-larson-resume.pdf">
+          View Resume
+        </a>
       </div>
     </div>
 
