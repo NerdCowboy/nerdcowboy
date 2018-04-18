@@ -177,12 +177,13 @@ const PortfolioPage = () => (
           sister company that worked in SEO. I also was able to do some general
           user testing with users to make sure our work ows ran smoothly. Then,
           I would either code out a skeleton in HTML and Sass, or I would have
-          them get the logic working and come in behind them and esh out the
-          styles. I collaborated heavily with our head of marketing, and we
-          developed the style, messaging, and work ows together for the
-          marketing website. We reviewed the mockups with other stakeholders and
-          made changes accordingly. I then created a custom Wordpress theme and
-          launched it, with the help of the other developers.
+          the other developers get the logic working and I'd come in behind them
+          and flesh out the styles. I collaborated heavily with our head of
+          marketing, and we developed the style, messaging, and workflows
+          together for the marketing website. We reviewed the mockups with other
+          stakeholders and made changes accordingly. I then created a custom
+          Wordpress theme and launched it, with the help of the other
+          developers.
         </p>
       </div>
       <img
