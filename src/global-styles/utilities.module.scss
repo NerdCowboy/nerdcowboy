@@ -40,6 +40,27 @@
   }
 }
 
+.actual-link {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .faux-link {
+      text-decoration: underline;
+    }
+  }
+}
+
+.circle {
+  border-radius: 50%;
+}
+
 .font-size-1-25 {
   font-size: 1.25rem;
 }

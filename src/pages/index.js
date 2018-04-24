@@ -14,6 +14,10 @@ import small247 from '../media/images/projects/247/247@0.5x.jpg'
 import medium247 from '../media/images/projects/247/247@1x.jpg'
 import large247 from '../media/images/projects/247/247@2x.jpg'
 
+import bas from '../media/images/recommendation-bas.jpg'
+import jared from '../media/images/recommendation-jared.jpg'
+import roland from '../media/images/recommendation-roland.jpg'
+
 const IndexPage = () => (
   <div styleName="u.page-wrapper u.center">
     <div styleName="oMedia.media home.howdy">
@@ -52,6 +56,94 @@ const IndexPage = () => (
           View Resume
         </a>
       </div>
+    </div>
+
+    <div styleName="home.quotes">
+
+    <blockquote styleName="home.quote">
+        <p>
+          Brent has an incredible talent for arranging a complex set of pieces
+          into an intuitive product.
+        </p>
+        <footer>
+          <cite styleName="home.quote-author">
+            <a
+              href="https://linkedin.com/in/nerdcowboy#recommendations"
+              title="View on LinkedIn"
+              styleName="oMedia.media u.actual-link"
+            >
+              <img
+                src={jared}
+                styleName="oMedia.figure u.circle u.mbn u.mrs home.avatar"
+                alt="Jared Ray"
+              />
+              <span styleName="oMedia.body">
+                <span styleName="u.faux-link">Jared Ray</span>
+                <span styleName="home.quote-author__position">
+                  Former Manager of Marketing & Client Services at SyCara Local
+                </span>
+              </span>
+            </a>
+          </cite>
+        </footer>
+      </blockquote>
+
+      <blockquote styleName="home.quote">
+        <p>
+          Working with Brent feels like working with a team of 2 to 3 people.
+        </p>
+        <footer>
+          <cite styleName="home.quote-author">
+            <a
+              href="https://linkedin.com/in/nerdcowboy#recommendations"
+              title="View on LinkedIn"
+              styleName="oMedia.media u.actual-link"
+            >
+              <img
+                src={bas}
+                styleName="oMedia.figure u.circle u.mbn u.mrs home.avatar"
+                alt="Bas Van Helvoort"
+              />
+              <span styleName="oMedia.body">
+                <span styleName="u.faux-link">Bas Van Helvoort</span>
+                <span styleName="home.quote-author__position">
+                  Product Manager at [24]7.ai
+                </span>
+              </span>
+            </a>
+          </cite>
+        </footer>
+      </blockquote>
+
+
+
+      <blockquote styleName="home.quote">
+        <p>
+          Brent is an amazing colleague to work with, and expertly comes up with
+          new solutions to complex problems.
+        </p>
+        <footer>
+          <cite styleName="home.quote-author">
+            <a
+              href="https://linkedin.com/in/nerdcowboy#recommendations"
+              title="View on LinkedIn"
+              styleName="oMedia.media u.actual-link"
+            >
+              <img
+                src={roland}
+                styleName="oMedia.figure u.circle u.mbn u.mrs home.avatar"
+                alt="Roland Coops"
+              />
+              <span styleName="oMedia.body">
+                <span styleName="u.faux-link">Roland Coops</span>
+                <span styleName="home.quote-author__position">
+                  Frontend Developer at [24]7.ai
+                </span>
+              </span>
+            </a>
+          </cite>
+        </footer>
+      </blockquote>
     </div>
 
     <div>

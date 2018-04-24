@@ -19,3 +19,55 @@
 .star {
   color: $orange;
 }
+
+.quotes {
+  margin-top: $spaceM;
+  margin-bottom: $spaceM;
+  margin-left: rem(-10px);
+
+  @include media('>750px') {
+    display: flex;
+  }
+}
+
+.quote {
+  line-height: 1.2;
+  position: relative;
+  padding-left: $spaceL;
+  margin-bottom: $spaceXL;
+
+  @include media('>750px') {
+    flex: 1;
+    margin: 0;
+    margin-left: rem(10px);
+  }
+
+  &:before {
+    content: '“';
+    position: absolute;
+    top: rem(-10px);
+    left: 0;
+    font-size: rem(42px);
+    color: $gray-1;
+  }
+
+  p {
+    margin-bottom: $spaceS;
+  }
+}
+
+.quote-author {
+  font-size: rem(14px);
+}
+
+.quote-author__position {
+  display: block;
+  color: $gray-2;
+  font-size: rem(12px);
+}
+
+.avatar {
+  height: rem(32px);
+  width: rem(32px);
+  flex: unset;
+}
