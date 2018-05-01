@@ -6,6 +6,7 @@ import Link from 'gatsby-link'
 import u from '../../global-styles/utilities.module.scss'
 import oMedia from '../../components/common/style-objects/media.module.scss'
 import project from '../../components/common/Project/project.module.scss'
+import cButton from '../../components/common/c-button.module.scss'
 
 // Images
 import small247 from '../../media/images/projects/247/247@0.5x.jpg'
@@ -142,7 +143,7 @@ const PortfolioPage = () => (
         <p>UI/UX Design, Front-end Development</p>
 
         <h3 styleName="u.mbn">Process</h3>
-        <p>
+        <p styleName="u.mbl">
           The goal and aesthetic for the landing page was discussed, and then I
           created a style tile to ensure agreement on both ends. Once approved,
           I created mockups, reviewed the mockups with the company, and made
@@ -150,6 +151,9 @@ const PortfolioPage = () => (
           Wordpress theme and trained their administrative assistant on how to
           update the webpage.
         </p>
+        <a styleName="cButton.button" href="http://rehabplus.biz">
+          View Website
+        </a>
       </div>
     </div>
 
