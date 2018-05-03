@@ -46,8 +46,8 @@ const IndexPage = () => (
           decade, specializing in UI/UX design and front-end development.
         </p>
         <p styleName="u.pbm">
-          I'm currently looking for remote or Tucson-based positions. If you
-          reckon you’d you like to work with me, let’s have a chat.
+          I'm currently looking for a new position. If you reckon you’d you like
+          to work with me, let’s have a chat.
         </p>
         <Link styleName="cButton.button cButton.button--primary" to="/contact/">
           Get in touch
@@ -59,8 +59,7 @@ const IndexPage = () => (
     </div>
 
     <div styleName="home.quotes">
-
-    <blockquote styleName="home.quote">
+      <blockquote styleName="home.quote">
         <p>
           Brent has an incredible talent for arranging a complex set of pieces
           into an intuitive product.
@@ -114,8 +113,6 @@ const IndexPage = () => (
           </cite>
         </footer>
       </blockquote>
-
-
 
       <blockquote styleName="home.quote">
         <p>
