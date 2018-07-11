@@ -46,7 +46,7 @@ const IndexPage = () => (
           decade, specializing in UI/UX design and front-end development.
         </p>
         <p styleName="u.pbm">
-          I'm currently looking for a new position. If you reckon you’d you like
+          I currently only take on small projects that interest me, but if you reckon you’d you like
           to work with me, let’s have a chat.
         </p>
         <Link styleName="cButton.button cButton.button--primary" to="/contact/">
