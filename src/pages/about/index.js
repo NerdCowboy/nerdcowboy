@@ -50,7 +50,7 @@ const AboutPage = () => (
       I grew up on a small, dairy farm 🐮 &nbsp;in Osakis, Minnesota. I
       graduated from Moorhead State University Moorhead (MSUM) with a degree in
       Graphic Communications and migrated to Arizona shortly thereafter. I'm
-      currently living in Tucson, Arizona with my beautiful wife, Kimberly, and
+      currently living in Mesa, Arizona with my beautiful wife, Kimberly, and
       our handsome dog, Chauncey.
     </p>
 
@@ -64,7 +64,7 @@ const AboutPage = () => (
       </li>
       <li>🍳 &nbsp;Cooking — I'm taken, ladies 😉</li>
       <li>🏈 &nbsp;Sports — Mainly basketball & football</li>
-      <li>⛰ &nbsp;Hiking — Check out 7 falls in Tucson</li>
+      <li>⛰ &nbsp;Hiking — Check out Camelback in Scottsdale</li>
       <li>🍺 &nbsp;Beer — Loving sours right now</li>
       <li>🍸 &nbsp;Mixology — Love most anything with tequila</li>
     </ul>

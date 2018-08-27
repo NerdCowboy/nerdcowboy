@@ -42,7 +42,7 @@ const IndexPage = () => (
           websites that are as slick as a whistle.
         </p>
         <p>
-          Based out of Tucson, Arizona, I’ve been in the industry for over a
+          Based out of Mesa, Arizona, I’ve been in the industry for over a
           decade, specializing in UI/UX design and front-end development.
         </p>
         <p styleName="u.pbm">
