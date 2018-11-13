@@ -12,19 +12,22 @@
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.25;
-  color: $black;
-  background-color: #fff;
+  color: $dk-green-100;
+  background-color: $tan-10;
   background-image: none;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba($dk-green-300, 0.5);
   border-radius: 0.25rem;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s,
+    transform ease-in-out 0.15s;
 
   &:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #80bdff;
+    color: $dk-green-100;
+    background-color: $tan-10;
+    border-color: $teal-100;
     outline: 0;
+    box-shadow: 1px 3px 5px rgba($dk-green-100, 0.5);
+    transform: translate(0, -1px);
   }
 
   &:placeholder {
@@ -32,7 +35,7 @@
   }
 }
 
-.slide-in {
+.slideIn {
   height: auto;
   max-height: 0;
   overflow: hidden;
@@ -40,7 +43,7 @@
   transition: all 0.5s ease-out;
 }
 
-.slide-in--is-active {
+.slideInIsActive {
   max-height: 10rem;
   opacity: 1;
 }

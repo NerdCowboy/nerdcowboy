@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
-
+import { Link } from 'gatsby'
 
 class Button extends React.Component {
   constructor(props) {
-    super(props);
-    this.renderAnchor = this.renderAnchor.bind(this);
+    super(props)
+    this.renderAnchor = this.renderAnchor.bind(this)
   }
 
   static propTypes = {
@@ -20,28 +19,21 @@ class Button extends React.Component {
      * Defines HTML button type attribute
      * @defaultValue 'button'
      */
-    type: PropTypes.oneOf(['button', 'reset', 'submit'])
-  };
+    type: PropTypes.oneOf(['button', 'reset', 'submit']),
+  }
 
   static defaultProps = {
     active: false,
     block: false,
-    disabled: false
-  };
-
-  renderAnchor() {
-    return (
-      <Link to={to}>
-        {children}
-      </Link>
-    )
+    disabled: false,
   }
 
-  render () {
+  renderAnchor() {
+    return <Link to={to}>{children}</Link>
+  }
 
-    return (
-      this.renderAnchor()
-    )
+  render() {
+    return this.renderAnchor()
   }
 }
 

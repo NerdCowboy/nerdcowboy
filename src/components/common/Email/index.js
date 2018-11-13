@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import MailCheck from 'react-mailcheck'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import cx from 'classnames/bind'
 
 import u from '../../../global-styles/utilities.module.scss'
 import forms from '../forms.module.scss'
 import alerts from '../alerts.module.scss'
-import button from '../c-button.module.scss'
+import button from '../Button/c-button.module.scss'
 
 class Email extends Component {
   static propTypes = {
@@ -62,39 +62,39 @@ class Email extends Component {
   }
 
   renderError = () => {
-    const errorClasses = classnames(
-      'forms.slide-in',
-      'alerts.alert',
-      'alerts.warning-text',
-      {
-        'forms.slide-in--is-active':
-          !this.state.hasValidEmail && this.isDoneTyping,
-      }
+    let cxForms = cx.bind(forms)
+    const errorClasses = cx(
+      forms.slideIn,
+      alerts.alert,
+      alerts.warningText,
+      cxForms({
+        slideInIsActive: !this.state.hasValidEmail && this.isDoneTyping,
+      })
     )
     return (
-      <div styleName={`${errorClasses}`}>
-        <h4 styleName="u.mbn u.mts">Slow down there partner!</h4>
+      <div className={errorClasses}>
+        <h4 className={cx(u.mbn, u.mts)}>Slow down there partner!</h4>
         <p>You need a valid email address so I can email you back.</p>
       </div>
     )
   }
 
   renderSuggestion = suggestion => {
-    const classes = classnames(
-      'u.font-size-0-75',
-      'u.font-weight-normal',
-      'button.link'
+    const classes = cx(u.fontSize075, u.fontWeightNormal, button.link)
+    let cxU = cx.bind(u)
+    const fadeClasses = cx(
+      u.fadeIn,
+      cxU({
+        fadeInIsActive: suggestion && this.isDoneTyping,
+      })
     )
 
-    const fadeClasses = classnames('u.fade-in', {
-      'u.fade-in--active': suggestion && this.isDoneTyping,
-    })
     if (suggestion) {
       return (
-        <span styleName={`${fadeClasses}`}>
+        <span className={`${fadeClasses}`}>
           {this.isDoneTyping && (
             <button
-              styleName={`${classes}`}
+              className={`${classes}`}
               onClick={() => this.useSuggestedEmail(suggestion)}
             >
               Did you mean {suggestion.full}?
@@ -109,8 +109,8 @@ class Email extends Component {
     return (
       <MailCheck email={this.state.inputText}>
         {suggestion => (
-          <div styleName="u.mbl">
-            <label styleName="forms.label" htmlFor="email">
+          <div className={u.mbl}>
+            <label className={forms.label} htmlFor="email">
               Email
               {this.renderSuggestion(suggestion)}
               <input
@@ -118,7 +118,7 @@ class Email extends Component {
                 name="email"
                 id="email"
                 value={this.state.inputText}
-                styleName="forms.input"
+                className={forms.input}
                 onKeyDown={this.hasStartedTyping}
                 onKeyUp={this.hasStoppedTyping}
                 onChange={event => {

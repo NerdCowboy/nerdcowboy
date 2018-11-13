@@ -1,17 +1,17 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 // Styles
-import '../global-styles/normalize.scss'
-import u from '../global-styles/utilities.module.scss'
+import '../../../global-styles/normalize.scss'
+import u from '../../../global-styles/utilities.module.scss'
 import layout from './layout.module.scss'
 
 const Header = () => (
-  <header styleName="layout.header">
-    <nav styleName="layout.nav">
-      <Link styleName="layout.logo-wrapper layout.item" to="/">
+  <header className={layout.header}>
+    <nav className={layout.nav}>
+      <Link className={layout.logoWrapper} to="/">
         <svg
-          styleName="layout.logo"
+          className={layout.logo}
           data-name="Nerd Cowboy"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 432.27 87.8"
@@ -33,35 +33,39 @@ const Header = () => (
         </svg>
       </Link>
 
-      <ul styleName="layout.main">
-        <li styleName="layout.item">
-          <Link styleName="layout.link" to="/about">
+      <ul className={layout.main}>
+        <li className={layout.item}>
+          <Link className={layout.link} to="/about">
             about
           </Link>
         </li>
-        <li styleName="layout.item">
-          <Link styleName="layout.link" to="/portfolio">
+        <li className={layout.item}>
+          <Link className={layout.link} to="/portfolio">
             portfolio
           </Link>
         </li>
-        <li styleName="layout.item">
-          <Link styleName="layout.link" to="/contact">
+        {/* <li className={layout.item}>
+          <Link className={layout.link} to="/portfolio">
+            blog
+          </Link>
+        </li> */}
+        <li className={layout.item}>
+          <Link className={layout.link} to="/contact">
             contact
           </Link>
         </li>
       </ul>
 
-      <ul styleName="layout.social">
-        <li styleName="layout.item layout.find-me">find me</li>
-        <li styleName="layout.item">
+      <ul className={layout.social}>
+        <li className={layout.item}>
           <a
-            styleName="layout.social-link"
+            className={layout.socialLink}
             href="https://twitter.com/NerdCowboy"
             title="Twitter"
           >
-            <span styleName="u.screen-reader-only">Twitter</span>
+            <span className={u.screenReaderOnly}>Twitter</span>
             <svg
-              styleName="layout.social-icon"
+              className={layout.socialIcon}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 30 24.01"
             >
@@ -72,15 +76,15 @@ const Header = () => (
             </svg>
           </a>
         </li>
-        <li styleName="layout.item">
+        <li className={layout.item}>
           <a
-            styleName="layout.social-link"
+            className={layout.socialLink}
             href="https://github.com/NerdCowboy"
             title="Github"
           >
-            <span styleName="u.screen-reader-only">Github</span>
+            <span className={u.screenReaderOnly}>Github</span>
             <svg
-              styleName="layout.social-icon"
+              className={layout.socialIcon}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 30 28.99"
             >
@@ -91,15 +95,15 @@ const Header = () => (
             </svg>
           </a>
         </li>
-        <li styleName="layout.item">
+        <li className={layout.item}>
           <a
-            styleName="layout.social-link"
+            className={layout.socialLink}
             href="https://www.linkedin.com/in/nerdcowboy/"
             title="LinkedIn"
           >
-            <span styleName="u.screen-reader-only">LinkedIn</span>
+            <span className={u.screenReaderOnly}>LinkedIn</span>
             <svg
-              styleName="layout.social-icon"
+              className={layout.socialIcon}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 30 30"
             >

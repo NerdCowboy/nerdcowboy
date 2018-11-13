@@ -1,6 +1,6 @@
 @import './vars/global';
 
-.screen-reader-only {
+.screenReaderOnly {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -11,7 +11,14 @@
   border: 0;
 }
 
-.page-wrapper {
+.contentWrapper {
+  background-color: rgba($tan-10, 0.75);
+  border-radius: rem(3px);
+  padding: rem(15px) rem(10px);
+  max-width: 50ch;
+}
+
+.pageWrapper {
   margin: 0 rem(10px);
   @include media('>xs') {
     margin: 0 rem(20px);
@@ -26,7 +33,7 @@
   }
 }
 
-.center-rows {
+.centerRows {
   @include media('>xs') {
     display: flex;
     justify-content: center;
@@ -34,13 +41,13 @@
   }
 }
 
-.reading-width {
+.readingWidth {
   @include media('>xs') {
     max-width: 40ch;
   }
 }
 
-.actual-link {
+.actualLink {
   &,
   &:hover,
   &:focus,
@@ -51,7 +58,7 @@
   &:hover,
   &:focus,
   &:active {
-    .faux-link {
+    .fauxLink {
       text-decoration: underline;
     }
   }
@@ -61,39 +68,39 @@
   border-radius: 50%;
 }
 
-.font-size-1-25 {
+.fontSize125 {
   font-size: 1.25rem;
 }
 
-.font-size-0-75 {
+.font-size075 {
   font-size: 0.75rem;
 }
 
-.font-weight-normal {
+.fontWeightNormal {
   font-weight: normal;
 }
 
-.font-weight-bold {
+.fontWeightBold {
   font-weight: bold;
 }
 
 // Animation
-.fade-in {
+.fadeIn {
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
 
-.fade-in--active {
+.fadeInIsActive {
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
 
-.fade-out {
+.fadeOut {
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
 
-.fade-out--active {
+.fadeOutIsActive {
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }

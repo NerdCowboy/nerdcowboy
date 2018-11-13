@@ -1,7 +1,7 @@
 @import '../global-styles/vars/global';
 
 .howdy {
-  margin: rem(40px) 0;
+  margin-bottom: rem(60px);
 
   @include media('<xs') {
     flex-direction: column;
@@ -9,46 +9,85 @@
   }
 }
 
-.logo-emblem {
-  fill: $black;
+.logoEmblem {
+  fill: $dk-green-100;
   width: 100%;
-  max-width: rem(200px);
-  min-width: rem(150px);
+  max-width: rem(100px);
 }
 
-.star {
-  color: $orange;
+.header {
+  display: inline-block;
+  border-bottom: solid 1px $teal-100;
+  padding-bottom: rem(8px);
+}
+
+.headerLinkWrapper {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dk-green-100;
+  }
+}
+
+.subHeader {
+  color: $white;
+  font-size: rem(21px);
+  line-height: 1.2;
+  max-width: 40ch;
+}
+
+.contactBtn {
+  display: block;
+  margin-bottom: $spaceS;
+
+  @include media('>325px') {
+    display: inline-block;
+    margin-right: $spaceM;
+    margin-bottom: 0;
+  }
+}
+
+.resumeBtn {
+  display: block;
+
+  @include media('>325px') {
+    display: inline-block;
+  }
 }
 
 .quotes {
+  color: $white;
   margin-top: $spaceM;
-  margin-bottom: $spaceM;
+  margin-bottom: rem(50px);
   margin-left: rem(-10px);
 
   @include media('>750px') {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template: auto;
   }
 }
 
 .quote {
+  background: rgba($tan-10, 0.5);
+  color: $dk-green-100;
+  font-size: rem(14px);
   line-height: 1.2;
   position: relative;
   padding-left: $spaceL;
   margin-bottom: $spaceXL;
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
 
-  @include media('>750px') {
-    flex: 1;
-    margin: 0;
-    margin-left: rem(10px);
+  &:hover {
+    background: rgba($tan-10, 0.75);
   }
 
-  &:before {
-    content: '“';
-    position: absolute;
-    top: rem(-10px);
-    left: 0;
-    font-size: rem(42px);
-    color: $gray-1;
+  @include media('>750px') {
+    margin: 0;
+    margin-left: rem(10px);
+    display: grid;
+    grid-template-rows: 1fr;
   }
 
   p {
@@ -56,18 +95,116 @@
   }
 }
 
-.quote-author {
-  font-size: rem(14px);
+.quoteAuthor {
+  margin-top: $spaceS;
 }
 
-.quote-author__position {
-  display: block;
-  color: $gray-2;
+.quoteAuthorName {
   font-size: rem(12px);
+  color: $dk-green-100;
+  font-weight: bold;
 }
 
+.quoteAuthorTitle {
+  display: block;
+  color: $dk-green-200;
+  font-size: rem(10px);
+}
+
+// 1. Turn it green
 .avatar {
-  height: rem(32px);
-  width: rem(32px);
+  border: solid 2px $white;
+  height: rem(48px);
+  width: rem(48px);
+  filter: grayscale(100%) sepia(100%) hue-rotate(90deg); //1
   flex: unset;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 1px 3px 4px rgba($dk-green-100, 0.5);
+}
+
+// Blog Previews
+.blogPreviews {
+  @include media('>750px') {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $spaceL;
+  }
+}
+
+.blogPreview {
+  display: block;
+  background: rgba($tan-10, 0.5);
+  color: $dk-green-100;
+  text-decoration: none;
+  border-radius: rem(3px);
+  padding: rem(15px) rem(10px);
+  margin-bottom: $spaceL;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    background 0.2s ease-in-out;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $dk-green-100;
+    box-shadow: 2px 7px 10px rgba($dk-green-100, 0.5);
+    transform: translate(0, rem(-3px));
+    background: rgba($tan-10, 0.75);
+  }
+}
+
+.blogLink {
+  color: $teal-200;
+}
+
+.hoverRight {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.blogPreview {
+  &:hover,
+  &:focus,
+  &:active {
+    .hoverRight {
+      transform: translateX(rem(2px));
+    }
+  }
+}
+
+// Project Previews
+.projectPreviews {
+  display: grid;
+  grid-gap: rem(20px);
+  margin-bottom: $spaceM;
+
+  @include media('>750px') {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.projectPreview {
+  &:hover,
+  &:focus,
+  &:active {
+    img {
+      color: $dk-green-100;
+      box-shadow: 2px 7px 10px rgba($dk-green-100, 0.5);
+      transform: translate(0, rem(-3px));
+      background: rgba($tan-10, 0.75);
+    }
+  }
+}
+
+.projectPreview img {
+  width: 100%;
+  height: rem(200px);
+  object-fit: cover;
+  object-position: 0 0;
+  margin-bottom: 0;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    background 0.2s ease-in-out;
+
+  @include media('>750px') {
+    height: rem(300px);
+  }
 }

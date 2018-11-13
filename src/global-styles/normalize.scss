@@ -6,9 +6,9 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  background-color: #fafafa;
   margin: 0;
 }
+
 article,
 aside,
 details,
@@ -41,10 +41,11 @@ template {
   display: none;
 }
 a {
-  color: $orange;
+  color: $teal-300;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   transition: color 0.2s ease-in-out;
+  text-decoration: none;
 }
 a:active,
 a:hover {
@@ -53,10 +54,10 @@ a:hover {
 a:active,
 a:hover,
 a:focus {
-  color: $dark-orange;
+  text-decoration: underline;
 }
 abbr[title] {
-  border-bottom: none;
+  bottom: none;
   text-decoration: underline;
   text-decoration: underline dotted;
 }
@@ -93,6 +94,7 @@ sup {
   top: -0.5em;
 }
 img {
+  border-radius: rem(5px);
   border-style: none;
 }
 svg:not(:root) {
@@ -200,7 +202,7 @@ $html-font-map: (
   992px: 21px,
   1200px: 21px,
   1500px: 24px,
-  1800px: 30px
+  1800px: 30px,
 );
 
 html {
@@ -220,7 +222,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: $dk-green-100;
   font-family: $sans-serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -281,7 +283,7 @@ h3 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: inherit;
   font-family: $serif;
   font-weight: bold;
@@ -453,13 +455,16 @@ fieldset {
   margin-bottom: 1rem;
 }
 blockquote {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  background: $tan-10;
+  border-radius: rem(3px);
+  border-left: solid rem(4px) $teal-100;
+  margin-left: 0;
+  margin-right: 0;
   margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
+  padding-top: rem(10px);
+  padding-right: rem(20px);
+  padding-bottom: rem(10px);
+  padding-left: rem(20px);
   margin-bottom: 1rem;
 }
 form {
@@ -528,7 +533,7 @@ th {
   font-weight: bold;
 }
 li {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: 0.5rem;
 }
 ol li {
   padding-left: 0;
@@ -538,13 +543,13 @@ ul li {
 }
 li > ol {
   margin-left: 1rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 li > ul {
   margin-left: 1rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 blockquote *:last-child {
   margin-bottom: 0;
@@ -556,7 +561,7 @@ p *:last-child {
   margin-bottom: 0;
 }
 li > p {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: 0.5rem;
 }
 code {
   font-size: 0.85rem;

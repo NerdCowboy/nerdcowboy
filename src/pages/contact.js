@@ -1,12 +1,15 @@
 // JS
 import React, { Component } from 'react'
+import cx from 'classnames'
 
+import Layout from '../components/common/Layout'
 import Button from '../components/common/Button'
 import Email from '../components/common/Email'
 
 // Styles
 import u from '../global-styles/utilities.module.scss'
-import btn from '../components/common/c-button.module.scss'
+import type from '../global-styles/typography.module.scss'
+import btn from '../components/common/Button/c-button.module.scss'
 import forms from '../components/common/forms.module.scss'
 
 class ContactPage extends Component {
@@ -44,63 +47,65 @@ class ContactPage extends Component {
 
   render() {
     return (
-      <div styleName="u.page-wrapper u.reading-width">
-        <h1 styleName="u.mbs u.mtxl">Contact</h1>
+      <Layout>
+        <div className={cx(u.pageWrapper, u.readingWidth)}>
+          <h1 className={cx(type.pageHeader)}>Contact</h1>
 
-        <p>
-          Have an interesting project you'd like to hire me for or just want to
-          say howdy? Fill in your information down yonder and I'll do my best to
-          get back to you.
-        </p>
+          <p>
+            Have an interesting project you'd like to hire me for or just want
+            to say howdy? Fill in your information down yonder and I'll do my
+            best to get back to you.
+          </p>
 
-        <form action="https://formspree.io/taulars@gmail.com" method="POST">
-          <div styleName="u.mbl">
-            <label styleName="forms.label" htmlFor="name">
-              Name
-              <input
-                styleName="forms.input"
-                type="text"
-                name="name"
-                id="name"
-                value={this.state.name}
-                onChange={event => {
-                  this.handleNameChange(event)
-                }}
-              />
-            </label>
-          </div>
+          <form action="https://formspree.io/taulars@gmail.com" method="POST">
+            <div className={u.mbl}>
+              <label className={forms.label} htmlFor="name">
+                Name
+                <input
+                  className={forms.input}
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={this.state.name}
+                  onChange={event => {
+                    this.handleNameChange(event)
+                  }}
+                />
+              </label>
+            </div>
 
-          <Email handleChange={this.handleEmailChange} />
+            <Email handleChange={this.handleEmailChange} />
 
-          <div styleName="u.mbl">
-            <label styleName="forms.label" htmlFor="message">
-              Message
-              <textarea
-                onChange={this.handleMessageChange}
-                value={this.state.message}
-                styleName="forms.input"
-                rows="10"
-                name="message"
-                id="message"
-              />
-            </label>
-          </div>
+            <div className={u.mbl}>
+              <label className={forms.label} htmlFor="message">
+                Message
+                <textarea
+                  onChange={this.handleMessageChange}
+                  value={this.state.message}
+                  className={forms.input}
+                  rows="10"
+                  name="message"
+                  id="message"
+                />
+              </label>
+            </div>
 
-          <input
-            type="hidden"
-            name="_subject"
-            value="New message from NerdCowboy.com"
-          />
-          <input type="text" name="_gotcha" style={{ display: 'none' }} />
+            <input
+              type="hidden"
+              name="_subject"
+              value="New message from NerdCowboy.com"
+            />
+            <input type="text" name="_gotcha" style={{ display: 'none' }} />
 
-          <input
-            styleName="btn.button btn.button--primary"
-            type="submit"
-            value="Send"
-            disabled={!this.state.isValid.email || !this.state.isValid.name}
-          />
-        </form>
-      </div>
+            <input
+              className={btn.buttonPrimary}
+              type="submit"
+              value="Send"
+              disabled={!this.state.isValid.email || !this.state.isValid.name}
+            />
+          </form>
+        </div>
+      </Layout>
     )
   }
 }

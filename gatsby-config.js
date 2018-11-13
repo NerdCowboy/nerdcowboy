@@ -1,31 +1,53 @@
 module.exports = {
   siteMetadata: {
-    title: `Nerd Cowboy - UI/UX Designer & Frontend Developer`,
+    title: 'Nerd Cowboy',
+    author: 'Brent Larson',
+    description:
+      'UI/UX Designer & Front-end Developer Brent Larson is a problem solver that designs & develops clean and easy-to-use websites that are as slick as a whistle.',
+    siteUrl: 'https://nerdcowboy.com',
   },
+  pathPrefix: '/',
   plugins: [
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-twitter`,
     {
-      resolve: `gatsby-plugin-react-css-modules`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        filetypes: {
-          '.scss': { syntax: `postcss-scss` },
-        },
-        // Exclude global styles from the plugin using a RegExp:
-        exclude: `\/global\/`,
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
       },
     },
-    // Everything in /static will be copied to an equivalent
-    // directory in /public during development and build, so
-    // assuming your favicons are in /static/favicons,
-    // you can reference them here
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 850,
+              wrapperStyle: `margin-bottom: 1rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+        ],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Nerd Cowboy - UI/UX Desinger & Frontend Developer`,
+        name: `Nerd Cowboy`,
         short_name: `Nerd Cowboy`,
-        description: `Home of UI/UX Designer & Frontend Developer Brent Larson`,
+        description: `UI/UX Designer & Front-end Developer Brent Larson is a problem solver that designs & develops clean and easy-to-use websites that are as slick as a whistle.`,
         lang: `en-US`,
         dir: `ltr`,
         start_url: `/index.html`,
@@ -66,6 +88,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-offline`, // needs to be after manifest
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
   ],
 }
