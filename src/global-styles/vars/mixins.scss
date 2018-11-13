@@ -1,4 +1,4 @@
-@import "~sass-rem";
+@import '~sass-rem/_rem';
 
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
