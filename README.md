@@ -1,9 +1,10 @@
 # gatsby-starter-blog
 Gatsby starter for creating a blog
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+### Howdy! 🤠 
 
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+Nerd Cowboy is the personal website of Brent Larson.
 
-## Running in development
-`gatsby develop`
+Viewing source these days can be difficult with modern tooling, so I've published my site so you can take a gander.
+
+If you find any issues, please submit a pull request or [send me a message](https://nerdcowboy.com/contact).
