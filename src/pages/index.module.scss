@@ -1,11 +1,14 @@
 @import '../global-styles/vars/global';
 
+// 1. Fix for weird Gatsby bug where media object gets
+// redeclared after visiting another page and then
+// coming back to the homepage.
 .howdy {
   margin-bottom: rem(60px);
 
   @include media('<xs') {
     flex-direction: column;
-    align-items: center;
+    align-items: center !important; // 1
   }
 }
 
