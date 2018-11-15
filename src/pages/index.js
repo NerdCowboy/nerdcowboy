@@ -243,9 +243,9 @@ class BlogIndex extends React.Component {
         </div>
 
         <div className={cx(u.pageWrapper, u.mbxl)}>
-          <div>
+          <Link className={cx(home.headerLinkWrapper)} to="/portfolio/">
             <h2 className={home.header}>Things I Done Did</h2>
-          </div>
+          </Link>
 
           <div className={home.projectPreviews}>
             <Link className={home.projectPreview} to="/portfolio/#24-7">
@@ -270,9 +270,9 @@ class BlogIndex extends React.Component {
 
         <div className={cx(u.pageWrapper)}>
           <div>
-            <Link className={cx(home.headerLinkWrapper)} to="/blog/">
-              <h2 className={home.header}>Things I Done Said</h2>
-            </Link>
+            {/* <Link className={cx(home.headerLinkWrapper)} to="/blog/"> */}
+            <h2 className={home.header}>Things I Done Said</h2>
+            {/* </Link> */}
           </div>
 
           <div className={home.blogPreviews}>
@@ -299,9 +299,9 @@ class BlogIndex extends React.Component {
             })}
           </div>
 
-          <Link className={cButton.button} to="/blog/">
+          {/* <Link className={cButton.button} to="/blog/">
             View Blog
-          </Link>
+          </Link> */}
         </div>
       </Layout>
     )
