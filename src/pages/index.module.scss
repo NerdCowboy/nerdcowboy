@@ -39,7 +39,7 @@
 
 .contactBtn {
   display: block;
-  margin-bottom: $spaceS;
+  margin-top: $spaceS;
 
   @include media('>325px') {
     display: inline-block;
@@ -50,6 +50,7 @@
 
 .resumeBtn {
   display: block;
+  margin-top: $spaceS;
 
   @include media('>325px') {
     display: inline-block;
@@ -60,7 +61,6 @@
   color: $white;
   margin-top: $spaceM;
   margin-bottom: rem(50px);
-  margin-left: rem(-10px);
 
   @include media('>750px') {
     display: grid;

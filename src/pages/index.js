@@ -125,7 +125,7 @@ class BlogIndex extends React.Component {
                 className={cx(cButton.button, home.resumeBtn)}
                 href="/brent-larson-resume.pdf"
               >
-                View Resume
+                View resume
               </a>
             </div>
           </div>
