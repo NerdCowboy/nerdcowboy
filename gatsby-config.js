@@ -28,15 +28,6 @@ module.exports = {
         path: `${__dirname}/src/media`,
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
-    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-sass-resources`,
@@ -73,12 +64,13 @@ module.exports = {
             },
           },
           {
-            resolve: `gatsby-remark-copy-linked-files`,
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: 'headerAnchorLink',
+            },
           },
-
-          {
-            resolve: `gatsby-remark-smartypants`,
-          },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
         ],
       },
     },

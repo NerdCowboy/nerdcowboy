@@ -115,3 +115,23 @@ main {
     }
   }
 }
+
+// Anchor link for headers
+.headerAnchorLink {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  fill: $gold-500;
+  padding-right: rem(5px);
+
+  @include media('>xs') {
+    position: absolute;
+    left: rem(-20px);
+    padding-right: 0;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: translateX(#{rem(-3px)});
+    }
+  }
+}
