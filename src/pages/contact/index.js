@@ -69,7 +69,7 @@ const ContactPage = () => {
       </header>
 
       <div className="textWidth">
-        <form action="https://formspree.io/taulars@gmail.com" method="POST">
+        <form name="contact" data-netlify="true" method="POST">
           <div className="mbl">
             <label className={styles.label} htmlFor="name">
               Name
