@@ -1,0 +1,235 @@
+.buttonContainer {
+  outline: none;
+  appearance: none;
+  background: none;
+  user-select: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+}
+
+.button {
+  border-radius: 3rem;
+  font-weight: 300;
+  font-family: $serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 250ms;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  line-height: 0.7;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $white;
+  color: $text-color;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 3rem;
+    box-shadow: 0 16px 16px 0 rgba($text-color, 0.06),
+      0 8px 8px 0 rgba($text-color, 0.06), 0 4px 4px 0 rgba($text-color, 0.06),
+      0 2px 2px 0 rgba($text-color, 0.06), 0 24px 24px 0 rgba($text-color, 0.06),
+      0 0 1px 0 rgba($text-color, 0.48);
+    opacity: 0;
+    transition: all ease-in-out 0.25s;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translateY(#{rem(-3px)});
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  & + .button {
+    margin-left: rem(10px);
+  }
+}
+
+//
+// Color Variants
+//
+
+.primary {
+  background-image: linear-gradient(220deg, $gold400 0%, $gold600 60%);
+
+  .contentWrapper {
+    background-color: $gray500;
+    color: transparent;
+    text-shadow: 0 1px 0 #fff;
+    background-clip: text;
+  }
+
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: $white;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    // background-color: $blue400;
+  }
+}
+
+.secondary {
+  // background-color: $primary-blue;
+
+  &:hover,
+  &:focus,
+  &:active {
+    // background-color: $primary-blue-hover;
+  }
+}
+
+.danger {
+  // background-color: $primary-red;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: $white;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    // background-color: $secondary-red;
+  }
+}
+
+//
+// Link Buttons
+//
+.link,
+.link-light,
+.link-dark {
+  background-color: transparent;
+  box-shadow: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+.link {
+  color: inherit;
+}
+
+.link-primary {
+  &,
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    // color: $blue500;
+  }
+}
+//
+// Sizes
+//
+.large {
+  padding-top: rem(2.5px);
+  padding-bottom: rem(2.5px);
+  font-size: rem(21px);
+}
+
+.small {
+  padding-top: rem(1px);
+  padding-bottom: rem(1px);
+  font-size: rem(16px);
+}
+
+//
+// Misc
+//
+// .is-active {
+//   // TODO: Add styles if/when we add a combo button
+// }
+
+.isLoading {
+  opacity: 0.5;
+}
+
+.isFullWidth {
+  width: 100%;
+}
+
+.isInline {
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  vertical-align: inherit;
+}
+
+.isIcon {
+  border-radius: 50%;
+  padding: rem(14px);
+
+  &.large {
+    padding: rem(21px);
+  }
+
+  &.small {
+    padding: rem(7px);
+  }
+
+  .contentWrapper {
+    width: 1em;
+    height: 1em;
+    display: block;
+
+    svg {
+      vertical-align: unset;
+    }
+  }
+}

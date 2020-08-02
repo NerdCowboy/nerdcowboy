@@ -1,0 +1,54 @@
+.container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  @include media('>xs') {
+    width: 90vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -45vw;
+    margin-right: -45vw;
+  }
+
+  @include media('>1600px') {
+    width: 1500px;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -750px;
+    margin-right: -750px;
+  }
+
+  pre {
+    margin-bottom: 0;
+    font-size: 0.85rem !important;
+    border-radius: 0.25rem;
+    padding: 1rem !important;
+    box-shadow: rem(0 0 10px) rgba($brown-1000, 0.1);
+  }
+
+  textarea {
+    padding: 1rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  > div:first-child {
+    position: relative;
+    border-radius: 0.25rem;
+
+    &:before {
+      content: 'Edit Me';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #cc7823;
+      padding: 0.2rem 0.3rem;
+      font-size: 0.5em;
+      line-height: 1;
+      text-transform: uppercase;
+      font-family: sans-serif;
+      border-bottom-right-radius: 0.2em;
+    }
+  }
+}

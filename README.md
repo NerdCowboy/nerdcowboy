@@ -1,7 +1,8 @@
 # gatsby-starter-blog
+
 Gatsby starter for creating a blog
 
-### Howdy! 🤠 
+### Howdy! 🤠
 
 Nerd Cowboy is the personal website of Brent Larson.
 

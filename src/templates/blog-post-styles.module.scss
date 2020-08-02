@@ -1,0 +1,38 @@
+.date {
+  text-transform: uppercase;
+  font-size: rem(14px);
+  color: $brown400;
+  margin-bottom: 0;
+}
+
+.articleNav {
+  margin-top: $space8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media('>xs') {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  li {
+    padding-top: $space2;
+    padding-bottom: $space2;
+
+    @include media('>xs') {
+      &:first-child {
+        padding-right: $space2;
+      }
+      &:last-child {
+        padding-left: $space2;
+      }
+    }
+  }
+}
+
+.prevNextLabel {
+  font-weight: 700;
+  font-size: rem(12px);
+  text-transform: uppercase;
+}

@@ -1,0 +1,47 @@
+// Fonts
+$serif: 'Patua One', 'Bookman', 'Rockwell', 'Georgia', serif;
+$sans-serif: 'Libre Franklin', -apple-system, BlinkMacSystemFont, Segoe UI,
+  Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+  sans-serif;
+
+// Colors
+$brown-1000: #3b2b1e;
+$brown400: #625a54;
+$brown300: #8d8179;
+
+$gold600: #be8455;
+$gold-500: #d99a5a;
+$gold400: #efac5f;
+
+$red500: #d95a5a;
+$red700: #af3c3c;
+
+$gray500: #979797;
+
+// Color aliases
+$white: #efece1;
+$text-color: $brown-1000;
+$link-color: $brown-1000;
+$blockquote-bg: transparent;
+$blockquote-border: $gold-500;
+
+// Media Queries
+$breakpoints: (
+  'xxs': 300px,
+  'xs': 480px,
+  'sm': 768px,
+  'md': 992px,
+  'lg': 1200px,
+  'xl': 1500px,
+  'xxl': 1800px,
+);
+
+// Spacing
+$space1: rem(3px);
+$space2: rem(7px);
+$space3: rem(14px);
+$space4: rem(21px);
+$space5: rem(28px);
+$space6: rem(35px);
+$space7: rem(42px);
+$space8: rem(49px);

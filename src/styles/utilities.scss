@@ -1,0 +1,312 @@
+//
+// Utilities
+//
+// probz move this to it's own file if it gets too large
+
+.actualLink {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    .fauxLink {
+      text-decoration: underline;
+    }
+  }
+}
+
+.textWidth {
+  width: 100%;
+  max-width: 40ch;
+  margin: 0 auto;
+}
+
+.pageHeader {
+  margin-top: $space3;
+  margin-bottom: $space5;
+  border-bottom: solid 1px rgba($brown-1000, 0.3);
+  padding-bottom: $space3;
+  text-align: center;
+}
+
+.pageTitle {
+  margin-bottom: 0;
+}
+
+.pageSubTitle {
+  max-width: 50ch;
+  margin: 0 auto;
+  font-size: rem(21px);
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.unset {
+  all: unset;
+}
+
+.resetList {
+  @include list-unstyled;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tal {
+  text-align: left;
+}
+
+.tar {
+  text-align: left;
+}
+
+// Adapated from Nicole Sullivan's OOCSS Spacing
+// p,m = padding,margin
+// a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
+.ptn,
+.pvn,
+.pan {
+  padding-top: 0 !important;
+}
+.ptxs,
+.pvxs,
+.paxs {
+  padding-top: $space1 !important;
+}
+.pts,
+.pvs,
+.pas {
+  padding-top: $space2 !important;
+}
+.ptm,
+.pvm,
+.pam {
+  padding-top: $space3 !important;
+}
+.ptl,
+.pvl,
+.pal {
+  padding-top: $space4 !important;
+}
+.ptxl,
+.pvxl,
+.paxl {
+  padding-top: $space5 !important;
+}
+.prn,
+.phn,
+.pan {
+  padding-right: 0 !important;
+}
+.prxs,
+.phxs,
+.paxs {
+  padding-right: $space1 !important;
+}
+.prs,
+.phs,
+.pas {
+  padding-right: $space2 !important;
+}
+.prm,
+.phm,
+.pam {
+  padding-right: $space3 !important;
+}
+.prl,
+.phl,
+.pal {
+  padding-right: $space4 !important;
+}
+.prxl,
+.phxl,
+.paxl {
+  padding-right: $space5 !important;
+}
+.pbn,
+.pvn,
+.pan {
+  padding-bottom: 0 !important;
+}
+.pbxs,
+.pvxs,
+.paxs {
+  padding-bottom: $space1 !important;
+}
+.pbs,
+.pvs,
+.pas {
+  padding-bottom: $space2 !important;
+}
+.pbm,
+.pvm,
+.pam {
+  padding-bottom: $space3 !important;
+}
+.pbl,
+.pvl,
+.pal {
+  padding-bottom: $space4 !important;
+}
+.pbxl,
+.pvxl,
+.paxl {
+  padding-bottom: $space5 !important;
+}
+.pln,
+.phn,
+.pan {
+  padding-left: 0 !important;
+}
+.plxs,
+.phxs,
+.paxs {
+  padding-left: $space1 !important;
+}
+.pls,
+.phs,
+.pas {
+  padding-left: $space2 !important;
+}
+.plm,
+.phm,
+.pam {
+  padding-left: $space3 !important;
+}
+.pll,
+.phl,
+.pal {
+  padding-left: $space4 !important;
+}
+.plxl,
+.phxl,
+.paxl {
+  padding-left: $space5 !important;
+}
+.mtn,
+.mvn,
+.man {
+  margin-top: 0 !important;
+}
+.mtxs,
+.mvxs,
+.maxs {
+  margin-top: $space1 !important;
+}
+.mts,
+.mvs,
+.mas {
+  margin-top: $space2 !important;
+}
+.mtm,
+.mvm,
+.mam {
+  margin-top: $space3 !important;
+}
+.mtl,
+.mvl,
+.mal {
+  margin-top: $space4 !important;
+}
+.mtxl,
+.mvxl,
+.maxl {
+  margin-top: $space5 !important;
+}
+.mrn,
+.mhn,
+.man {
+  margin-right: 0 !important;
+}
+.mrxs,
+.mhxs,
+.maxs {
+  margin-right: $space1 !important;
+}
+.mrs,
+.mhs,
+.mas {
+  margin-right: $space2 !important;
+}
+.mrm,
+.mhm,
+.mam {
+  margin-right: $space3 !important;
+}
+.mrl,
+.mhl,
+.mal {
+  margin-right: $space4 !important;
+}
+.mrxl,
+.mhxl,
+.maxl {
+  margin-right: $space5 !important;
+}
+.mbn,
+.mvn,
+.man {
+  margin-bottom: 0 !important;
+}
+.mbxs,
+.mvxs,
+.maxs {
+  margin-bottom: $space1 !important;
+}
+.mbs,
+.mvs,
+.mas {
+  margin-bottom: $space2 !important;
+}
+.mbm,
+.mvm,
+.mam {
+  margin-bottom: $space3 !important;
+}
+.mbl,
+.mvl,
+.mal {
+  margin-bottom: $space4 !important;
+}
+.mbxl,
+.mvxl,
+.maxl {
+  margin-bottom: $space5 !important;
+}
+.mln,
+.mhn,
+.man {
+  margin-left: 0 !important;
+}
+.mlxs,
+.mhxs,
+.maxs {
+  margin-left: $space1 !important;
+}
+.mls,
+.mhs,
+.mas {
+  margin-left: $space2 !important;
+}
+.mlm,
+.mhm,
+.mam {
+  margin-left: $space3 !important;
+}
+.mll,
+.mhl,
+.mal {
+  margin-left: $space4 !important;
+}
+.mlxl,
+.mhxl,
+.maxl {
+  margin-left: $space5 !important;
+}

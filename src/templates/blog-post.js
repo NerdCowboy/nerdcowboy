@@ -1,101 +1,74 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-import get from 'lodash/get'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import cx from 'classnames'
 
-import type from '../global-styles/typography.module.scss'
-import u from '../global-styles/utilities.module.scss'
-import btn from '../components/common/Button/c-button.module.scss'
-import Layout from '../components/common/Layout'
+import SEO from '../components/seo'
+import styles from './blog-post-styles.module.scss'
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const siteDescription = post.excerpt
-    const { previous, next } = this.props.pageContext
+const BlogPostTemplate = ({ data, pageContext }) => {
+  const post = data.mdx
+  const { previous, next } = pageContext
 
-    return (
-      <Layout location={this.props.location}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
-        />
-        <article className={cx(u.pageWrapper)}>
-          <header>
-            <h1 className={type.pageHeader}>{post.frontmatter.title}</h1>
-            {post.frontmatter.subTitle && (
-              <h2 className={type.pageSubHeader}>
-                {post.frontmatter.subTitle}
-              </h2>
-            )}
-          </header>
-          <div className={u.contentWrapper}>
-            {/* <p>{post.frontmatter.date}</p> */}
-            <div
-              className={u.readingWidth}
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
-          </div>
+  return (
+    <>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.lead || post.excerpt}
+      />
+      <header className="pageHeader">
+        <h1 className="pageTitle">{post.frontmatter.title}</h1>
+        <p className="pageSubTitle">{post.frontmatter.subtitle}</p>
+        <p className={styles.date}>{post.frontmatter.date}</p>
+      </header>
+      <div className="textWidth">
+        <MDXRenderer className>{post.body}</MDXRenderer>
+      </div>
 
-          <ul
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-              listStyle: 'none',
-              padding: 0,
-              margin: '1rem 0',
-            }}
-          >
-            <li>
-              {previous && (
-                <Link
-                  className={btn.button}
-                  to={previous.fields.slug}
-                  rel="prev"
-                >
-                  <span className={btn.hoverLeft}>←</span>{' '}
-                  {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link className={btn.button} to={next.fields.slug} rel="next">
-                  {next.frontmatter.title}{' '}
-                  <span className={btn.hoverRight}>→</span>
-                </Link>
-              )}
-            </li>
-          </ul>
-        </article>
-      </Layout>
-    )
-  }
+      <ul className={cx('resetList', styles.articleNav)}>
+        {previous && (
+          <li>
+            <div className={styles.prevNextLabel}>Prev Post:</div>
+            <Link to={previous.fields.slug} rel="prev">
+              ← {previous.frontmatter.title}
+            </Link>
+            {previous.frontmatter.lead}
+          </li>
+        )}
+        {next && (
+          <li>
+            <div className={styles.prevNextLabel}>Next Post:</div>
+            <Link to={next.fields.slug} rel="next">
+              {next.frontmatter.title} →
+            </Link>
+            {next.frontmatter.lead}
+          </li>
+        )}
+      </ul>
+    </>
+  )
 }
 
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query($slug: String!) {
     site {
       siteMetadata {
         title
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt
-      html
+      excerpt(pruneLength: 160)
       frontmatter {
         title
-        subTitle
+        subtitle
+        lead
         date(formatString: "MMMM DD, YYYY")
       }
+      body
     }
   }
 `

@@ -1,0 +1,28 @@
+.phoneLink {
+  display: inline-flex;
+  align-items: center;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $text-color;
+
+    .phoneNumber {
+      &:before {
+        width: 102.5%;
+        left: -1.25%;
+        right: auto;
+      }
+    }
+  }
+
+  .phoneNumber {
+    position: relative;
+    font-size: 0.8em;
+    @include underlineLink;
+
+    &:before {
+      width: 0;
+    }
+  }
+}
