@@ -17,13 +17,13 @@ import bas from '../media/images/recommendation-bas.jpg'
 import jared from '../media/images/recommendation-jared.jpg'
 import roland from '../media/images/recommendation-roland.jpg'
 
-import small247 from '../../media/images/projects/247/247@0.5x.jpg'
-import medium247 from '../../media/images/projects/247/247@1x.jpg'
-import large247 from '../../media/images/projects/247/247@2x.jpg'
+import small247 from '../media/images/projects/247/247@0.5x.jpg'
+import medium247 from '../media/images/projects/247/247@1x.jpg'
+import large247 from '../media/images/projects/247/247@2x.jpg'
 
-import smallRss from '../../media/images/projects/rss/rss@0.5x.jpg'
-import mediumRss from '../../media/images/projects/rss/rss@1x.jpg'
-import largeRss from '../../media/images/projects/rss/rss@2x.jpg'
+import smallRss from '../media/images/projects/rss/rss@0.5x.jpg'
+import mediumRss from '../media/images/projects/rss/rss@1x.jpg'
+import largeRss from '../media/images/projects/rss/rss@2x.jpg'
 
 class BlogIndex extends React.Component {
   render() {
@@ -255,7 +255,7 @@ class BlogIndex extends React.Component {
           <div className={home.projectPreviews}>
             <Link className={home.projectPreview} to="/portfolio/#24-7">
               <img
-                className={cx(oMedia.figure, project.img)}
+                className={cx(oMedia.figure)}
                 alt="Screenshot of [24]7 Predictive Search Bidding"
                 src={`${small247}`}
                 srcSet={`
@@ -268,7 +268,7 @@ class BlogIndex extends React.Component {
 
             <Link className={home.projectPreview} to="/portfolio/#rss">
               <img
-                className={cx(oMedia.figure, project.img)}
+                className={cx(oMedia.figure)}
                 alt="Screenshot of RSS.com Marketing Test"
                 src={`${smallRss}`}
                 srcSet={`
