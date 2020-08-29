@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import cx from 'classnames'
 import { useMailCheck } from '@qb/use-mailcheck'
+import { navigate } from 'gatsby'
 import { motion } from 'framer-motion'
 
 import Button from '../../components/library/Button'
@@ -56,6 +57,31 @@ const ContactPage = () => {
     visible: { opacity: 1, y: 0 },
   }
 
+  function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+      )
+      .join('&')
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        name,
+        email,
+        message,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
+  }
+
   return (
     <>
       <SEO title="Contact" />
@@ -69,7 +95,20 @@ const ContactPage = () => {
       </header>
 
       <div className="textWidth">
-        <form name="contact" data-netlify="true" method="POST">
+        <form
+          name="contact"
+          method="post"
+          action="/contact/thanks/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label htmlFor="bot-field">
+              Don’t fill this out: <input name="bot-field" />
+            </label>
+          </p>
           <div className="mbl">
             <label className={styles.label} htmlFor="name">
               Name

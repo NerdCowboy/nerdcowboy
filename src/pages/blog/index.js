@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-// import cx from 'classnames'
+import cx from 'classnames'
 
 import ArticlesPreview from '../../components/ArticlesPreview'
-// import styles from './styles.module.scss'
+import styles from './styles.module.scss'
 import SEO from '../../components/seo'
 
 const Blog = ({ data }) => {
@@ -26,9 +26,9 @@ const Blog = ({ data }) => {
       </header>
       <ArticlesPreview articles={previewArticles} />
 
-      {/* <div className={cx(styles.archive, 'textWidth')}>
-        <h2 className={styles.archiveTitle}>More Nerd Posts</h2>
-        {restOfArticles.map((article) => (
+      <div className={cx(styles.archive, 'textWidth')}>
+        {/* <h2 className={styles.archiveTitle}>More Nerd Posts</h2> */}
+        {/* {restOfArticles.map((article) => (
           <Link
             to={article.node.fields.slug}
             className={styles.articleLink}
@@ -43,11 +43,11 @@ const Blog = ({ data }) => {
                   {article.node.frontmatter.subtitle}
                 </p>
               </header>
-              {article.node.lead || article.node.excerpt}
+              {article.node.frontmatter.lead || article.node.excerpt}
             </div>
           </Link>
-        ))}
-      </div> */}
+        ))} */}
+      </div>
     </>
   )
 }
