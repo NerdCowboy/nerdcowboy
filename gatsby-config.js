@@ -12,6 +12,7 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: `blog`,
+        ignore: [`${__dirname}/content/blog/drafts`],
       },
     },
     {
@@ -121,15 +122,16 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-feed-mdx`,
       options: {
         query: `
           {
-            site {
+             site {
               siteMetadata {
                 title
                 description
                 siteUrl
+                site_url: siteUrl
               }
             }
           }
@@ -139,40 +141,52 @@ module.exports = {
             serialize: ({ query: { site, allMdx } }) =>
               allMdx.edges.map((edge) => ({
                 ...edge.node.frontmatter,
-                description: edge.node.frontmatter.lead || edge.node.excerpt,
-                data: edge.node.frontmatter.date,
-                url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                custom_elements: [{ 'content:encoded': edge.node.html }],
+                description: edge.node.frontmatter.lead,
+                date: edge.node.frontmatter.date,
+                url: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
+                guid: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
+                custom_elements: [
+                  {
+                    'content:encoded': edge.node.html.replace(
+                      /(?<=\"|\s)\/static\//g,
+                      `${site.siteMetadata.siteUrl}\/static\/`
+                    ),
+                  },
+                ],
               })),
-
-            /* if you want to filter for only published posts, you can do
-             * something like this:
-             * filter: { frontmatter: { published: { ne: false } } }
-             * just make sure to add a published frontmatter field to all posts,
-             * otherwise gatsby will complain
-             * */
             query: `
-            {
-              allMdx(
-                limit: 1000,
-                sort: { order: DESC, fields: [frontmatter___date] },
-              ) {
-                edges {
-                  node {
-                    fields { slug }
-                    frontmatter {
-                      title
-                      date
+              {
+                allMdx(
+                  filter: { fields: { contentType: { eq: "blog" } } }
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields {
+                        slug
+                        contentType
+                      }
+                      frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        title
+                        subtitle
+                        lead
+                        tags
+                      }
                     }
-                    html
                   }
                 }
               }
-            }
             `,
             output: '/rss.xml',
-            title: 'Gatsby RSS feed',
+            title: "Nerd Cowboy's Blog RSS Feed",
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp and then test if pathname of
+            // current page satisfied this regular expression;
+            // if not provided or `undefined`, all pages will have feed reference inserted
+            match: '^/blog/',
           },
         ],
       },

@@ -27,10 +27,17 @@ $cardMobile: '>370px';
   .title {
     margin-top: 0;
     margin-bottom: 0;
+    @include media('<xxs') {
+      font-size: rem(18px);
+    }
   }
 
   .subtitle {
-    margin-bottom: rem(5px);
+    display: none;
+    @include media('>xxs') {
+      display: block;
+    }
+    margin-bottom: 0;
     > * {
       margin-bottom: 0;
     }
@@ -46,7 +53,7 @@ $cardMobile: '>370px';
       margin-bottom: rem(15px);
     }
 
-    @include media('>540px') {
+    @include media('>645px') {
       display: none;
     }
 
@@ -63,7 +70,13 @@ $cardMobile: '>370px';
     align-items: center;
     text-transform: uppercase;
     font-family: $serif;
-    font-size: rem(18px);
+    line-height: 1;
+    font-size: rem(14px);
+    padding-top: rem(5px);
+
+    @include media('>xxs') {
+      font-size: rem(18px);
+    }
     @include media($cardMobile) {
       font-size: rem(20px);
     }

@@ -3,21 +3,21 @@
   margin-bottom: 1rem;
 
   @include media('>xs') {
-    width: 90vw;
+    width: 80vw;
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -45vw;
-    margin-right: -45vw;
+    margin-left: -40vw;
+    margin-right: -40vw;
   }
 
-  @include media('>1600px') {
-    width: 1500px;
+  @include media('>1500px') {
+    width: 1200px;
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -750px;
-    margin-right: -750px;
+    margin-left: -600px;
+    margin-right: -600px;
   }
 
   pre {

@@ -63,8 +63,9 @@ const AboutPage = () => {
         <p>
           Many designers get stuck in the trap of creating design artificats
           that get them no closer to a solution. When I create mockups, I refer
-          to them as{' '}
-          <Link to="/blog/design-artifacts/">“conversation pieces.”</Link>{' '}
+          to them as "conversation pieces."{' '}
+          {/* TODO: add back link when article is finished */}
+          {/* <Link to="/blog/design-artifacts/">“conversation pieces.”</Link>{' '} */}
           They’re meant to be iterated on and adjusted to meet deadlines.
         </p>
         <p>I do my best to never waste time.</p>

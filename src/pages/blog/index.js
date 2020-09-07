@@ -77,6 +77,7 @@ export const pageQuery = graphql`
             title
             subtitle
             lead
+            tags
           }
           id
         }

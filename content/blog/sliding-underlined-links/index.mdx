@@ -1,57 +1,95 @@
 ---
 title: 5 ways to make sliding underlined links
 subtitle: Bring a little underlined delight to your links
-lead: Tired of boring links? Bring them to life with these CSS-only hover underline effects
-date: '2020-08-01'
+lead: Tired of boring links? Bring them to life with these CSS-only underline transitions
+date: '2020-09-08'
+tags: css, webdev
 ---
 
 import Button from '../../../src/components/library/Button'
 
-Underlined links are as old as the web itself. The underline gives affordance to users that the text links somewhere else. By default, all links are underlined and that's good enough for a lot of websites.
+Underlined links are as old as the web itself. The underline gives affordance to users that it will link somewhere else. By default, all links are underlined and that's good enough for a lot of websites.
 
 However, adding a little bit of motion to an underline can create a delightful micro-animation that can help bring your website to life. (did I buzzword right?)
 
-## Getting started #1-3
+## Recreating the underline
 
-For the first three techniques, we'll be adding `position: relative` to the `a` element. This means anything that's inside of it, or in this case, it's psuedo elements, will be contained to the link's bounding box when absolutely positioned.
+![Example of basic underline](/basic-underline.png)
 
-Then, we remove the default underline of links and set the color to something else to help denote that it's a link.
+Before we dive into the underline transitions, first we need to re-create the native anchor underline.
+
+To get started, we'll add color to the link to help denote that it's a link and we'll get rid of the native underline so we can set our own.
 
 ```css
 a {
-  position: relative;
-  text-decoration: none;
   color: saddlebrown;
+  text-decoration: none;
 }
 ```
 
-## 1. Slide in and back
+From here, we could use an absolutely positioned pseudo element (i.e. `::before`) to achieve the same effect we want. However, absolute positioning will only display an underline on a single line, so I can't recommend going that route unless you're using this for something that you're confident won't ever be more than a single line.
 
-![Example of slide in and back underline technique](/slide-in-back.gif)
-
-With this technique, we're going to be creating a link that underlines from left to right on hover. When hovered off, the underline will slide back to the left and disappear.
-
-We'll absolutely position the `::before` pseudo element of the `a` element to create an underline effect. Since we relatively positioned the `a` element in the beginning, this pseudo element will be contained within the space of the link itself.
-
-In the initial state, we'll create a rectangle without any width and expand it all the way to the right on hover.
+So the only other option for creating a multi-line underline is using the `background` property. Since you can't change the size or positioning of `background-color`, we need to use `background-image`. I repeat the same color in the gradient as I'm trying to make the background a solid color, but you can definitely spice things up by making it a real gradient.
 
 ```css
-/* 1.  Change left to right to reverse direction */
-a::before {
-  content: '';
-  position: absolute;
-  left: 0; /* 1. */
-  bottom: -0.2em;
-  height: 0.2em;
-  width: 0;
-  background-color: currentColor;
-  transition: width 0.2s ease-in-out;
+a {
+  color: saddlebrown;
+  text-decoration: none;
+  background-image: linear-gradient(#d99a5a, #d99a5a);
+}
+```
+
+With the gradient set, it will make the entire anchor's background to the color/gradient we specify, so we'll need to change it's size and position to make it look like an underline.
+
+We'll set the `background-size`'s width to `100%` and the height to `0.1em`—we use an em here as it will proportionally scale the underline if the text size changes.
+
+Set `background-position-y` to `100%` to place the underline to the bottom of the anchor, making it look like an underline.
+
+We'll also throw a transition in there so we can animate our underlines later.
+
+```css
+a {
+  color: saddlebrown;
+  text-decoration: none;
+  background-image: linear-gradient(#d99a5a, #d99a5a);
+  background-size: 100% 0.1em;
+  background-position-x: 0%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+}
+```
+
+<Button variant="primary" href="https://codepen.io/nerdcowboy/pen/MWyOxOY">
+  Edit on CodePen
+</Button>
+
+## 1. Slide in and back
+
+![Example of slide in and back underline effect](/slide-in-back.gif)
+
+With this effect, we're going to be creating a link that underlines from left to right on hover. When hovered off, the underline will slide back to the left and disappear.
+
+We set the `background-size` width to `0%` initially to hide it. On hover, we change it to `100%` to get it to slide from left to right.
+
+If you want to reverse the direction, change `background-position-x` to `100%` to change the starting position to the right.
+
+```css
+a {
+  color: saddlebrown;
+  text-decoration: none;
+  background-image: linear-gradient(#d99a5a, #d99a5a);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
 }
 
-a:hover::before,
-a:focus::before,
-a:active::before {
-  width: 100%;
+a:hover,
+a:focus,
+a:active {
+  background-size: 100% 0.1em;
 }
 ```
 
@@ -59,75 +97,30 @@ a:active::before {
   Edit on CodePen
 </Button>
 
-## 2. Slide in and out
+## 2. Slide middle out
 
-![Example of slide in and out underline technique](/slide-in-out.gif)
+![Example of slide middle out underline effect](/slide-middle-out.gif)
 
-Hovering on a link with this technique looks exactly the same as the previous one. However, on hover-off/mouseleave, the underline will slide off to the right instead of snapping back to the left.
+When we hover on the link with this effect, the line starts from the middle and extends simultaneously to the right and left edges. On hover-off, the line slides back to the middle and disappears.
 
-I discovered this technique on [Artboard Studio](https://artboard.studio) via [Land Book's](https://land-book.com/) site of the day — I highly recommend it for keeping up with the latest design/CSS trends.
-
-I assumed they were using some javascript to achieve this effect as there's no native hover-off/mouse selector in CSS (though you can [use a CSS trick for certain effects](https://css-tricks.com/different-transitions-for-hover-on-hover-off/)).
-
-To my surprise, it uses a pretty simple CSS trick. It takes advantage of the fact that the underline isn't initially visible, so you can set the hover-off styles as the default styles.
+The only difference between this one and the previous one is that we change `background-position-x` to `50%` to making the starting point of the underline in the middle.
 
 ```css
-/* 1.  Swap left and right values to reverse direction  */
-a::before {
-  content: '';
-  position: absolute;
-  left: auto; /* 1. */
-  right: 0; /* 1. */
-  bottom: -0.2em;
-  height: 0.2em;
-  width: 0;
-  background-color: currentColor;
-  transition: width 0.2s ease-in-out;
+a {
+  color: saddlebrown;
+  text-decoration: none;
+  background-image: linear-gradient(#d99a5a, #d99a5a);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 50%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
 }
 
-a:hover::before,
-a:focus::before,
-a:active::before {
-  width: 100%;
-  left: 0; /* 1. */
-  right: auto; /* 1. */
-}
-```
-
-<Button variant="primary" href="https://codepen.io/nerdcowboy/pen/QWNNrzq">
-  Edit on CodePen
-</Button>
-
-## 3. Slide middle out
-
-![Example of slide middle out underline technique](/slide-middle-out.gif)
-
-With this technique, on hover, the line starts from the middle and extends simultaneously to the right and left edges. On hover-off, the line slides back to the middle and disappears.
-
-The key trick to getting this to work is setting the properties `left` and `right` to 0. This has the effect of making the bounding box full width, however, we're still able to set a separate width of the underline. [Here's a technical explanation](https://www.smashingmagazine.com/2013/08/absolute-horizontal-vertical-centering-css/#explanation) of how this works for those curious.
-
-Since we can set a separate width, this allows us to center the rectangle by setting the left and right margin to auto.
-
-```css
-a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.2em;
-  height: 0.2em;
-  width: 0;
-  background-color: currentColor;
-  transition: width 0.2s ease-in-out;
-  width: 0;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-a:hover::before,
-a:focus::before,
-a:active::before {
-  width: 100%;
+a:hover,
+a:focus,
+a:active {
+  background-size: 100% 0.1em;
 }
 ```
 
@@ -135,24 +128,149 @@ a:active::before {
   Edit on CodePen
 </Button>
 
-## Always-visible underline variants
+## 3. Slide in and out
 
-![Example of multi-line slide over the top underline technique](/sliding-variants.gif)
+![Example of slide in and out underline effect](/slide-in-out.gif)
 
-If you do want an underline to always be present, you can still use the first three techniques. The only difference is we need to add an an additional always-visible underline using the `::after` pseudo element.
+Hovering on a link with this effect looks exactly the same as the first effect. However, on hover-off, the underline will slide off to the right instead of snapping back to the left.
+
+There's no hover-off psuedo-class in CSS, unfortunately, but there are some [CSS tricks to mimic it for certain effects](https://css-tricks.com/different-transitions-for-hover-on-hover-off/).
+
+We essentially use the same CSS trick, but here we take advantage of the underline not being initially visible. We set `background-position-x: 100%` with our initial styles so it slides to the right on hover-off and change it to `0%` on hover so that the line comes in from the left.
 
 ```css
-/* 1. need to bring above ::before. 
-If you switch ::before & ::after, you don't need this */
-a::after {
-  content: '';
-  position: absolute;
-  bottom: -0.2em;
-  height: 0.2em;
-  width: 100%;
-  left: 0;
-  background-color: currentColor;
-  z-index: 1; /* 1 */
+a {
+  color: saddlebrown;
+  text-decoration: none;
+  background-image: linear-gradient(#d99a5a, #d99a5a);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+}
+
+a:hover,
+a:focus,
+a:active {
+  background-size: 100% 0.1em;
+  background-position-x: 0%;
+}
+```
+
+<Button variant="primary" href="https://codepen.io/nerdcowboy/pen/QWNNrzq">
+  Edit on CodePen
+</Button>
+
+## 4. Slide to middle
+
+![Example of slide to middle underline effect](/slide-to-middle.gif)
+
+With this effect, we have 2 lines that we start on the outside edges and slide them inwards until they meet in the middle. On hover-off, they slide off to the edges and disappear.
+
+Since we have 2 different lines, we need to create 2 linear-gradients. Anytime you want to add another background property, you must add a comma after each item's value. However, if the value is identical for both, CSS will just repeat it. This means we don't have to manually duplicate each background property if it's going to be the same for each linear-gradient.
+
+Since everything else for the lines are the same, we just need to adjust their positions. We set the first line's `background-position-x` to `0%` to start it on the left edge and the 2nd to `100%` to start it on the right edge.
+
+```css
+a {
+  color: saddlebrown;
+  background-image: linear-gradient(#d99a5a, #d99a5a), linear-gradient(#d99a5a, #d99a5a);
+  background-size: 0% 0.1em;
+  background-position-y: 100%;
+  background-position-x: 0%, 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  background-size: 100% 0.1em;
+}
+```
+
+<Button variant="primary" href="https://codepen.io/nerdcowboy/pen/poydBwR">
+  Edit on CodePen
+</Button>
+
+## Always-visible underline variants
+
+![Example of multi-line slide over the top underline effect](/sliding-variants.gif)
+
+If you do want an underline to always be present, you can still use the first four effects. The only difference is we need to add an an additional underline using the same `linear-gradient` effect. Note that for the slide to middle effect, we'll have to do add a 3rd `linear-gradient` since that effect already uses 2 of them.
+
+```css
+/*
+// Shared Styles
+*/
+a {
+  color: saddlebrown;
+  background-image: linear-gradient(#d99a5a, #d99a5a), linear-gradient(saddlebrown, saddlebrown);
+  background-size: 0% 0.1em, 100% 0.1em;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+/*
+// Slide in & back
+*/
+.slide-in-back {
+  background-position-x: 0%;
+}
+
+.slide-in-back:hover,
+.slide-in-back:focus,
+.slide-in-back:active {
+  background-size: 100% 0.1em, 100% 0.1em;
+}
+
+/*
+// Slide in & out
+*/
+.slide-in-out {
+  background-position-x: 100%;
+}
+
+.slide-in-out:hover,
+.slide-in-out:focus,
+.slide-in-out:active {
+  background-size: 100% 0.1em, 100% 0.1em;
+  background-position-x: 0%;
+}
+
+/*
+// Slide middle out
+*/
+.slide-middle-out {
+  background-position-x: 50%;
+}
+
+.slide-middle-out:hover,
+.slide-middle-out:focus,
+.slide-middle-out:active {
+  background-size: 100% 0.1em, 100% 0.1em;
+}
+
+/*
+// Slide to middle
+*/
+.slide-to-middle {
+  background-image: linear-gradient(#d99a5a, #d99a5a), linear-gradient(
+      #d99a5a,
+      #d99a5a
+    ), linear-gradient(saddlebrown, saddlebrown);
+  background-size: 0% 0.1em, 0% 0.1em, 100% 0.1em;
+  background-position-x: 0%, 100%;
+}
+
+.slide-to-middle:hover,
+.slide-to-middle:focus,
+.slide-to-middle:active {
+  background-size: 100% 0.1em, 100% 0.1em, 100% 0.1em;
 }
 ```
 
@@ -160,70 +278,21 @@ a::after {
   Edit on CodePen
 </Button>
 
-## 4. Multi-line slide over the top
-
-![Example of multi-line slide over the top underline technique](/slide-over-top.gif)
-
-This technique is quite different than the previous examples and probably the most complex. I discovered this technique from [@jhey's](https://twitter.com/jh3yy) [CodePen](https://codepen.io/jh3y/pen/gOPjBPM).
-
-We have an always-visible underline, but when we hover over the link, we slide a small rectangle that appears to transverse to the right over the existing underline.
-
-Since we're using `background-image` instead of absolutely positioned psuedo elements, it allows us to support multi-line text links.
-
-This techniques uses 2 linear-gradients. The first gradient is the always-visible underline and the second is the small rectangle we'll be sliding over it. Since we're applying `background-image` to an inline element, we can take advantage of the fact that inline elements naturally don't show any overflow. We set `background-position-x` so that the small rectangle is shifted to the left out of view. And on hover, we change the position so that it's all the way to the right, creating the sliding effect.
-
-You don't have to use CSS variables (aka Custom Properties), but it does make it a bit easier to update.
-
-```css
-/* Forked from https://codepen.io/jh3y/pen/gOPjBPM */
-:root {
-  --bg: white;
-  --underline-width: 0.35em;
-  --underline-block-width: 50px;
-  --underline-color: #622e0a;
-  --underline-color-hover: #401d05;
-  --underline-transition: 0.6s;
-}
-
-a {
-  color: saddlebrown;
-  text-decoration: none;
-  background-image: linear-gradient(90deg, var(--bg), var(--bg)),
-    linear-gradient(90deg, var(--underline-color), var(--underline-color));
-  background-size: var(--underline-block-width) var(--underline-width), 100% var(--underline-width);
-  background-repeat: no-repeat;
-  background-position-x: calc(var(--underline-block-width) * -1), 0;
-  background-position-y: 130%;
-  transition: background-position-x var(--underline-transition);
-}
-
-a:hover {
-  background-image: linear-gradient(90deg, var(--bg), var(--bg)),
-    linear-gradient(90deg, var(--underline-color-hover), var(--underline-color-hover));
-  background-position-x: calc(100% + var(--underline-block-width)), 0;
-}
-```
-
-<Button variant="primary" href="https://codepen.io/nerdcowboy/pen/jOqqgOr">
-  Edit on CodePen
-</Button>
-
 ## 5. Slide to top
 
-![Example of slide to top underline technique](/slide-to-top.gif)
+![Example of slide to top underline effect](/slide-to-top.gif)
 
-And finally, we have another technique that also uses `background-image`, so it also has the benefit of being multi-line friendly. With this technique, we're going to have an always-visible underline. When hovered, the underline will slide up to to top of the text.
+For this effect, we have an always-visible underline, but on hover, we'll grow the underline to the top of the anchor.
 
-Since this underline will slide underneath the text, it's important to make sure you use colors that will pass a [contrast checker](https://colourcontrast.cc/).
+Since this underline will slide underneath the text, it's important to make sure you use colors that will pass a [contrast checker](https://colourcontrast.cc/) to ensure good accessibility.
 
-To create the underline, we use a linear-gradient, but adjust the `background-size` so that the `y` value (the 2nd number) is equal the the height of the underline. Then we push the underline to the bottom using `background-position-y`. On hover, we just adjust the `background-size` to 100% to extend the underline to the top of the text.
+Since we want the underline to always be visible, note that we changed the default `background-size`'s width to `100%`. To slide the underline to the top of the link, we change the `background-size`'s height to `100%`.
 
 ```css
 a {
   color: black;
-  padding-top: 0.2em;
-  background-image: linear-gradient(to bottom, transparent 10%, #d99a5a 10%);
-  background-size: 100% 0.2em;
+  background-image: linear-gradient(#d99a5a, #d99a5a);
+  background-size: 100% 0.1em;
   background-position-y: 100%;
   background-repeat: no-repeat;
   transition: background-size 0.2s ease-in-out;
@@ -239,6 +308,16 @@ a:active {
 <Button variant="primary" href="https://codepen.io/nerdcowboy/pen/zYqKmBJ">
   Edit on CodePen
 </Button>
+
+## Bonus!
+
+![Example of multi-line slide over the top underline effect](/slide-over-top.gif)
+
+For making it this far, I have a little treat for you. I saw this effect making the rounds on Twitter and and it's actually what inspired me to write this post.
+
+[@jh3yy](https://twitter.com/jh3yy) created [a CodePen](https://codepen.io/jh3y/pen/gOPjBPM) where he animates an underline over an existing underline.
+
+Learn how to create this effect on [Jhey's Egghead tutorial.](https://egghead.io/lessons/css-create-an-animated-underline-effect-using-css-transition-and-css-background-position)
 
 ### Got more?
 
