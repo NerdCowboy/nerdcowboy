@@ -48,8 +48,9 @@ export const wrapRootElement = ({ element }) => (
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
     </Helmet>
-    <MDXProvider components={components}>
-      <Layout>{element}</Layout>
-    </MDXProvider>
+
+    <Layout>
+      <MDXProvider components={components}>{element}</MDXProvider>
+    </Layout>
   </>
 )
