@@ -1,3 +1,19 @@
+const getRssBody = (url, html) => {
+  const mainBody = html.match(/<main>((.|\n)*)<\/main>/g)[0]
+  const mainBodyWithStaticUrls = mainBody.replace(
+    /(?<="|\s)\/static\//g,
+    `${url}/static/`
+  )
+
+  return {
+    custom_elements: [
+      {
+        'content:encoded': mainBodyWithStaticUrls,
+      },
+    ],
+  }
+}
+
 module.exports = {
   siteMetadata: {
     title: 'Nerd Cowboy',
@@ -145,14 +161,7 @@ module.exports = {
                 date: edge.node.frontmatter.date,
                 url: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
                 guid: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
-                custom_elements: [
-                  {
-                    'content:encoded': edge.node.html.replace(
-                      /(?<=\"|\s)\/static\//g,
-                      `${site.siteMetadata.siteUrl}\/static\/`
-                    ),
-                  },
-                ],
+                ...getRssBody(site.siteMetadata.siteUrl, edge.node.html),
               })),
             query: `
               {
@@ -181,7 +190,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Nerd Cowboy's Blog RSS Feed",
+            title: 'Nerd Cowboy',
             // optional configuration to insert feed reference in pages:
             // if `string` is used, it will be used to create RegExp and then test if pathname of
             // current page satisfied this regular expression;
