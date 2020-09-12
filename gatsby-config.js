@@ -159,8 +159,8 @@ module.exports = {
                 ...edge.node.frontmatter,
                 description: edge.node.frontmatter.description,
                 date: edge.node.frontmatter.date,
-                url: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
-                guid: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
+                url: `${site.siteMetadata.siteUrl}${edge.node.fields.slug}`,
+                guid: `${site.siteMetadata.siteUrl}${edge.node.fields.slug}`,
                 ...getRssBody(site.siteMetadata.siteUrl, edge.node.html),
               })),
             query: `
