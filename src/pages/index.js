@@ -71,6 +71,7 @@ const IndexPage = () => {
               title
               subtitle
               description
+              tags
             }
             id
           }
