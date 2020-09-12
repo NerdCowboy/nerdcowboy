@@ -1,0 +1,34 @@
+.archive {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.archiveTitle {
+  font-size: rem(32px);
+  font-weight: 700;
+  border-bottom: solid 1px rgba($brown-1000, 0.3);
+  padding-top: $space6;
+  padding-bottom: $space4;
+  text-align: center;
+}
+
+.articleTitle {
+  display: inline-block;
+  position: relative;
+  @include underlineLink;
+}
+
+.articleLink {
+  display: block;
+  border-bottom: solid 1px rgba($brown-1000, 0.3);
+  padding-top: $space2;
+  padding-bottom: $space2;
+
+  &:hover,
+  &:focus,
+  &:active {
+    .articleTitle {
+      @include underlineLinkHover;
+    }
+  }
+}

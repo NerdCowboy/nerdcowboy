@@ -1,0 +1,259 @@
+$navMobile: '>330px';
+
+.navContainer {
+  padding-bottom: rem(20px);
+}
+
+// Top Header
+// -------------------------------
+.header {
+  width: 100%;
+  @include media('>xxs') {
+  }
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  padding-bottom: rem(3px);
+}
+
+// Social Icons
+.social {
+  @include list-unstyled();
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.socialLink {
+  display: block;
+  color: $brown-1000;
+  transition: fill, color 0.2s ease-in-out;
+  padding: rem(10px 10px 5px);
+
+  @include media('>xxs') {
+    padding-top: rem(15px);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $gold-500;
+  }
+}
+
+.socialIcon {
+  display: block;
+  fill: currentColor;
+  font-size: 1.25em;
+}
+
+.topBorderWrapper {
+  width: calc(100% - #{rem(18px)});
+  margin: 0 auto;
+
+  @include media('>xxs') {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: rem(10px);
+    left: rem(10px);
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .topBorder {
+    height: rem(5px);
+    background-color: $brown-1000;
+    position: relative;
+    flex: 1;
+
+    &:last-child,
+    &:first-child .borderRounded {
+      display: none;
+    }
+
+    @include media('>xxs') {
+      &:last-child,
+      &:first-child .borderRounded {
+        display: block;
+      }
+    }
+
+    svg {
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+
+      &.isLeft {
+        left: rem(-2px);
+        right: auto;
+      }
+      &.isRight {
+        left: auto;
+        right: rem(-2px);
+      }
+    }
+  }
+}
+
+// Nav
+// -------------------------------
+.nav {
+  @include list-unstyled();
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: $serif;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  padding-bottom: rem(10px);
+  position: relative;
+
+  @include media($navMobile) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-bottom: 0;
+    margin-bottom: rem(-20px);
+  }
+
+  li {
+    display: block;
+    text-align: center;
+
+    @include media('>xxs') {
+      &:nth-child(n + 4) {
+        order: 2;
+      }
+    }
+
+    @include media($navMobile) {
+      width: 100%;
+    }
+
+    a {
+      display: block;
+      padding: rem(10px 10px);
+
+      @include media($navMobile) {
+        padding: rem(30px 10px);
+      }
+      @include media('>xs') {
+        padding: rem(18px 10px 20px);
+      }
+
+      &:hover,
+      &:active,
+      &:focus,
+      &.isActive {
+        span {
+          &:before {
+            width: 102.5%;
+            left: -1.25%;
+            right: auto;
+          }
+        }
+      }
+
+      span {
+        position: relative;
+        @include underlineLink;
+        &:before {
+          width: 0;
+        }
+      }
+    }
+  }
+
+  // Kinda hacky, but it works
+  // Duplicate the logo so it takes up space in the
+  // nav flexbox container
+  .logoPlaceholder {
+    display: none;
+    width: 100%;
+    max-width: rem(70px);
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  .logoContainer {
+    width: 100%;
+
+    @include media('>xxs') {
+      margin-bottom: $space5;
+    }
+
+    @include media($navMobile) {
+      order: 1;
+      // width: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  .logoLink {
+    display: block;
+    flex: 1;
+    padding: rem(10px 0);
+    margin: 0 auto;
+    max-width: rem(60px);
+    position: relative;
+
+    @include media('>xxs') {
+      top: rem(-50px);
+      padding: rem(10px 10px);
+      max-width: rem(80px);
+    }
+
+    @include media('>390px') {
+      top: rem(-40px);
+    }
+  }
+
+  .logo {
+    display: block;
+    fill: currentColor;
+    margin: 0 auto;
+    width: 100%;
+    pointer-events: auto;
+  }
+}
+
+.bottomBorderWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - #{rem(18px)});
+  margin: 0 auto;
+
+  div {
+    flex: 1;
+  }
+}
+
+.bottomBorder {
+  height: rem(3px);
+  background-color: rgba($gray500, 0.5);
+}
+
+// 1. Need to bring above logo emblem's container <li>
+.logoTextLink {
+  z-index: 1; // 1
+}
+
+.logoText {
+  display: block;
+  fill: currentColor;
+  width: 100%;
+  max-width: 11rem;
+  margin: 0 auto;
+  padding: rem(0 10px);
+
+  @include media('>xxs') {
+    margin: 0 rem(10px);
+  }
+}

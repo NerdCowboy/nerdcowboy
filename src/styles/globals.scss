@@ -1,0 +1,147 @@
+@import './normalize';
+@import './utilities';
+
+/* patua-one-regular - latin */
+@font-face {
+  font-family: 'Patua One';
+  font-style: normal;
+  font-weight: 700;
+  /* prettier-ignore */
+  unicode-range: U+0020-007F;
+  src: local('Patua One'), local('PatuaOne-Regular'),
+    url('../media/fonts/patua-one-v10-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../media/fonts/patua-one-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* libre-franklin-300 - latin */
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 300;
+  /* prettier-ignore */
+  unicode-range: U+0020-007F;
+  src: local('Libre Franklin Light'), local('LibreFranklin-Light'),
+    url('../media/fonts/libre-franklin-v4-latin-300.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../media/fonts/libre-franklin-v4-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* libre-franklin-500 - latin */
+// @font-face {
+//   font-family: 'Libre Franklin';
+//   font-style: normal;
+//   font-weight: 500;
+/* prettier-ignore */
+// unicode-range: U+0020-007F;
+//   src: local('Libre Franklin Medium'), local('LibreFranklin-Medium'),
+//     url('../media/fonts/libre-franklin-v4-latin-500.woff2') format('woff2'),
+//     /* Chrome 26+, Opera 23+, Firefox 39+ */
+//       url('../media/fonts/libre-franklin-v4-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+// }
+
+/* libre-franklin-700 - latin */
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 700;
+  /* prettier-ignore */
+  unicode-range: U+0020-007F;
+  src: local('Libre Franklin Bold'), local('LibreFranklin-Bold'),
+    url('../media/fonts/libre-franklin-v4-latin-700.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('../media/fonts/libre-franklin-v4-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+  background-image: url('../media/images/asfalt-dark.png');
+}
+
+main {
+  //
+  // Links
+  //
+  p a:not([class^='styles-module--button']):not(.gatsby-resp-image-link),
+  li a:not([class^='styles-module--button']):not(.gatsby-resp-image-link),
+  .underlineLink {
+    --underlineDeg: 179.5deg;
+    --underlineHeight: 10;
+    --underlineColor: #{$gold-500};
+    background-repeat: no-repeat;
+    position: relative;
+    background-image: linear-gradient(
+      var(--underlineDeg),
+      transparent calc(var(--underlineHeight) * 1%),
+      var(--underlineColor) calc((var(--underlineHeight) + 0.5) * 1%)
+    );
+    transition: all 0.2s ease-in-out;
+    padding-bottom: rem(2px);
+    background-size: 100% 850%;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-size: 100% 100%;
+    }
+
+    &:nth-child(4n + 2) {
+      --underlineDeg: 180.5deg;
+    }
+  }
+
+  // images
+  img {
+    box-shadow: rem(0 2px 10px -2px) rgba($brown-1000, 0.2);
+    width: 100%;
+  }
+
+  //
+  // Headers
+  //
+  h2:not(:first-of-type) {
+    margin-top: $space8;
+  }
+  h3 {
+    margin-top: $space6;
+  }
+  h4 {
+    margin-top: $space4;
+    margin-bottom: $space2;
+  }
+
+  .gatsby-resp-image-wrapper {
+    margin-top: $space5;
+    margin-bottom: $space5;
+    box-shadow: rem(0 0 10px) rgba($brown-1000, 0.1);
+    // Match default for regular images
+    border-radius: 0.3125rem;
+
+    > span {
+      border-radius: 0.3125rem;
+    }
+  }
+}
+
+// Anchor link for headers
+.headerAnchorLink {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  fill: $gold-500;
+  padding-right: rem(5px);
+
+  @include media('>xs') {
+    position: absolute;
+    left: rem(-20px);
+    padding-right: 0;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: translateX(#{rem(-3px)});
+    }
+  }
+}
+
+.aside {
+  line-height: 1.2;
+}
