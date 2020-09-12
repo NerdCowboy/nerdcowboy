@@ -27,7 +27,7 @@ a {
 }
 ```
 
-From here, we could use an absolutely positioned pseudo element (i.e. `::before`) to achieve the same effect we want. However, absolute positioning will only display an underline on a single line, so I can't recommend going that route unless you're using this for something that you're confident won't ever be more than a single line.
+From here, we could use an absolutely positioned pseudo-element (i.e. `::before`) to achieve the same effect we want. However, absolute positioning will only display an underline on a single line, so I can't recommend going that route unless you're using this for something that you're confident won't ever be more than a single line.
 
 So the only other option for creating a multi-line underline is using the `background` property. Since you can't change the size or positioning of `background-color`, we need to use `background-image`. I repeat the same color in the gradient as I'm trying to make the background a solid color, but you can definitely spice things up by making it a real gradient.
 
@@ -39,7 +39,7 @@ a {
 }
 ```
 
-With the gradient set, it will make the entire anchor's background to the color/gradient we specify, so we'll need to change it's size and position to make it look like an underline.
+With the gradient set, it will make the entire anchor's background to the color/gradient we specify, so we'll need to change its size and position to make it look like an underline.
 
 We'll set the `background-size`'s width to `100%` and the height to `0.1em`—we use an em here as it will proportionally scale the underline if the text size changes.
 
@@ -134,7 +134,7 @@ a:active {
 
 Hovering on a link with this effect looks exactly the same as the first effect. However, on hover-off, the underline will slide off to the right instead of snapping back to the left.
 
-There's no hover-off psuedo-class in CSS, unfortunately, but there are some [CSS tricks to mimic it for certain effects](https://css-tricks.com/different-transitions-for-hover-on-hover-off/).
+There's no hover-off pseudo-class in CSS, unfortunately, but there are some [CSS tricks to mimic it for certain effects](https://css-tricks.com/different-transitions-for-hover-on-hover-off/).
 
 We essentially use the same CSS trick, but here we take advantage of the underline not being initially visible. We set `background-position-x: 100%` with our initial styles so it slides to the right on hover-off and change it to `0%` on hover so that the line comes in from the left.
 
@@ -199,7 +199,7 @@ a:active {
 
 ![Example of multi-line slide over the top underline effect](/sliding-variants.gif)
 
-If you do want an underline to always be present, you can still use the first four effects. The only difference is we need to add an an additional underline using the same `linear-gradient` effect. Note that for the slide to middle effect, we'll have to do add a 3rd `linear-gradient` since that effect already uses 2 of them.
+If you do want an underline to always be present, you can still use the first four effects. The only difference is we need to add an additional underline using the same `linear-gradient` effect. Note that for the slide to middle effect, we'll have to do add a 3rd `linear-gradient` since that effect already uses 2 of them.
 
 ```css
 /*
@@ -313,7 +313,7 @@ a:active {
 
 ![Example of multi-line slide over the top underline effect](/slide-over-top.gif)
 
-For making it this far, I have a little treat for you. I saw this effect making the rounds on Twitter and and it's actually what inspired me to write this post.
+For making it this far, I have a little treat for you. I saw this effect making the rounds on Twitter and it's actually what inspired me to write this post.
 
 [@jh3yy](https://twitter.com/jh3yy) created [a CodePen](https://codepen.io/jh3y/pen/gOPjBPM) where he animates an underline over an existing underline.
 
