@@ -157,7 +157,7 @@ module.exports = {
             serialize: ({ query: { site, allMdx } }) =>
               allMdx.edges.map((edge) => ({
                 ...edge.node.frontmatter,
-                description: edge.node.frontmatter.lead,
+                description: edge.node.frontmatter.description,
                 date: edge.node.frontmatter.date,
                 url: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
                 guid: `${site.siteMetadata.siteUrl}/blog${edge.node.fields.slug}`,
@@ -181,7 +181,7 @@ module.exports = {
                         date(formatString: "MMMM DD, YYYY")
                         title
                         subtitle
-                        lead
+                        description
                         tags
                       }
                     }

@@ -11,7 +11,7 @@ const PageTemplate = ({ data }) => {
     <>
       <SEO
         title={page.frontmatter.title}
-        description={page.frontmatter.lead || page.excerpt}
+        description={page.frontmatter.description || page.excerpt}
       />
       <header className="pageHeader">
         <h1 className="pageTitle">{page.frontmatter.title}</h1>

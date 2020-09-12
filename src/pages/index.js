@@ -70,7 +70,7 @@ const IndexPage = () => {
               date(formatString: "MMMM DD, YYYY")
               title
               subtitle
-              lead
+              description
             }
             id
           }

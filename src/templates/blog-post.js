@@ -14,7 +14,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
     <>
       <SEO
         title={post.frontmatter.title}
-        description={post.frontmatter.lead || post.excerpt}
+        description={post.frontmatter.description || post.excerpt}
       />
       <header className="pageHeader">
         <h1 className="pageTitle">{post.frontmatter.title}</h1>
@@ -32,7 +32,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             <Link to={previous.fields.slug} rel="prev">
               ← {previous.frontmatter.title}
             </Link>
-            {previous.frontmatter.lead}
+            {previous.frontmatter.description}
           </li>
         )}
         {next && (
@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
             <Link to={next.fields.slug} rel="next">
               {next.frontmatter.title} →
             </Link>
-            {next.frontmatter.lead}
+            {next.frontmatter.description}
           </li>
         )}
       </ul>
@@ -65,7 +65,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
-        lead
+        description
         date(formatString: "MMMM DD, YYYY")
       }
       body

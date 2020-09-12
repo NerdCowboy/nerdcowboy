@@ -43,7 +43,7 @@ const Blog = ({ data }) => {
                   {article.node.frontmatter.subtitle}
                 </p>
               </header>
-              {article.node.frontmatter.lead || article.node.excerpt}
+              {article.node.frontmatter.description || article.node.excerpt}
             </div>
           </Link>
         ))} */}
@@ -76,7 +76,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             subtitle
-            lead
+            description
             tags
           }
           id

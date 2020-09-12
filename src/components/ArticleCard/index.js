@@ -46,7 +46,7 @@ const ArticleCard = ({ article }) => (
           <p className={styles.subtitle}>{article.node.frontmatter.subtitle}</p>
         </header>
         <p className={styles.lead}>
-          {article.node.frontmatter.lead || article.node.excerpt}
+          {article.node.frontmatter.description || article.node.excerpt}
         </p>
         <div className={styles.fauxLink}>
           Continue Reading
