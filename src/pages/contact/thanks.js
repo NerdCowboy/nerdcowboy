@@ -9,12 +9,16 @@ const ContactThanksPage = () => (
     <SEO title="Contact" />
     <header className={cx('pageHeader', styles.aboutHeader)}>
       <h1 className="pageTitle">Boy, Howdy!</h1>
-      <p className="pageSubTitle">Your message has been sent!</p>
+      <p className="pageSubTitle">Your message has been sent</p>
     </header>
-    <div>
-      <p className="textWidth tac">
-        Once the pony express figures out how to deliver your electronic mail,
-        I'll get back to you faster than a sneeze through a screen door!
+    <div className="textWidth">
+      <p className="tac">
+        The digital pony express is riding nonstop to deliver your message to my
+        mailbox.
+      </p>
+      <p className="tac">
+        Rest assured, I'll get back to you faster than a sneeze through a screen
+        door!
       </p>
     </div>
   </>
