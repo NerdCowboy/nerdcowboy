@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 
 import styles from './styles.module.scss'
 
@@ -16,7 +17,7 @@ const NotFoundPage = () => (
       <img
         src={tumbleweed}
         alt="Tumbleeweed with 404 in the middle"
-        className={styles.tumbleweed}
+        className={classNames(styles.tumbleweed, 'no-box-shadow')}
       />
       <p>
         Real sorry, but there's nothing to see in these parts. The page you

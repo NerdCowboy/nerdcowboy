@@ -67,6 +67,10 @@
   text-align: left;
 }
 
+.no-box-shadow {
+  box-shadow: none;
+}
+
 // Adapated from Nicole Sullivan's OOCSS Spacing
 // p,m = padding,margin
 // a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
