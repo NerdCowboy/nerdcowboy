@@ -39,6 +39,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         subtitle
+        description
+        tags
       }
       body
     }

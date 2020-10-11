@@ -11,8 +11,10 @@ import SEO from '../../components/seo'
 
 const ContactPage = () => {
   const [name, setName] = useState('')
+  const [isNameDirty, setIsNameDirty] = useState(false)
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [isMessageDirty, setIsMessageDirty] = useState(false)
   const [isEmailValid, setIsEmailValid] = useState()
   const [isDoneTypingEmail, setIsDoneTypingEmail] = useState(false)
   const emailSuggestion = useMailCheck({ email })
@@ -23,10 +25,12 @@ const ContactPage = () => {
 
   const handleNameChange = (event) => {
     setName(event.target.value)
+    setIsNameDirty(true)
   }
 
   const handleMessageChange = (event) => {
     setMessage(event.target.value)
+    setIsMessageDirty(true)
   }
 
   const validateEmail = () => {
@@ -68,6 +72,14 @@ const ContactPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
+
+    if (!name || !message || !email) {
+      setIsNameDirty(true)
+      setIsMessageDirty(true)
+      setIsDoneTypingEmail(true)
+      return
+    }
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -123,6 +135,17 @@ const ContactPage = () => {
                 }}
               />
             </label>
+            {isNameDirty && !name && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={animateInputError}
+                className={styles.error}
+              >
+                <h4 className="mbn mts">You got a name there, pardner?</h4>
+                <p>I'd like to know who I'm talking to.</p>
+              </motion.div>
+            )}
           </div>
 
           <div className="mbl">
@@ -165,7 +188,7 @@ const ContactPage = () => {
                 variants={animateInputError}
                 className={styles.error}
               >
-                <h4 className="mbn mts">Slow down there partner!</h4>
+                <h4 className="mbn mts">Slow down there, pardner!</h4>
                 <p>You need a valid email address so I can email you back.</p>
               </motion.div>
             )}
@@ -183,6 +206,17 @@ const ContactPage = () => {
                 id="message"
               />
             </label>
+            {isMessageDirty && !message && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={animateInputError}
+                className={styles.error}
+              >
+                <h4 className="mbn mts">Got something to say?</h4>
+                <p>If you want to send me a message, you need to write one.</p>
+              </motion.div>
+            )}
           </div>
 
           <input
