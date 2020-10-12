@@ -8,12 +8,12 @@ import CvsLogo from '../media/svgs/cvs-health-logo.svg'
 import TivityLogo from '../media/svgs/tivity-health-logo.svg'
 // Can't start filename with a number due to svgr
 import Twenty47Logo from '../media/svgs/twenty47-logo.svg'
-import Layout from '../components/Layout'
 import ArticlesPreview from '../components/ArticlesPreview'
 import { IconCircleRightArrow } from '../components/Icons'
 
 import styles from './styles.module.scss'
 import Button from '../components/library/Button'
+import SEO from '../components/seo'
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -81,6 +81,7 @@ const IndexPage = () => {
   `)
   return (
     <>
+      <SEO description="Brent Larson wrangles code and pixels at Tivity Health as a Sr. UI/UX developer, and is an organizer for IXDA." />
       <div>
         {/* Intro */}
         <div className={styles.intro}>
