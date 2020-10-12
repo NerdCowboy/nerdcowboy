@@ -1,8 +1,29 @@
-.date {
+.postInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
-  font-size: rem(14px);
+  font-size: rem(12px);
   color: $brown400;
+  margin-top: rem(6px);
   margin-bottom: 0;
+
+  > * + * {
+    margin-left: rem(10px);
+  }
+}
+
+.date {
+  margin: 0;
+}
+
+.editLink {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    color: $brown400;
+  }
 }
 
 .articleNav {

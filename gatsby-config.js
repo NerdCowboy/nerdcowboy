@@ -21,6 +21,12 @@ module.exports = {
       'UI/UX Designer & Front-end Developer Brent Larson is a problem solver that designs & develops clean and easy-to-use websites that are as slick as a whistle.',
     author: 'Brent Larson',
     siteUrl: 'https://nerdcowboy.com',
+    repo: {
+      baseUrl: 'https://github.com/NerdCowboy/nerdcowboy/',
+      contentPath: 'tree/master/content',
+      viewContentPath: 'blob/master/content',
+      editContentPath: 'edit/master/content',
+    },
   },
   plugins: [
     {

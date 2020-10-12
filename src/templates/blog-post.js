@@ -5,10 +5,12 @@ import cx from 'classnames'
 
 import SEO from '../components/seo'
 import styles from './blog-post-styles.module.scss'
+import { IconGithub } from '../components/Icons'
 
 const BlogPostTemplate = ({ data, pageContext }) => {
   const post = data.mdx
-  const { previous, next } = pageContext
+  const { baseUrl, editContentPath } = data.site.siteMetadata.repo
+  const { previous, next, slug } = pageContext
 
   return (
     <>
@@ -19,7 +21,17 @@ const BlogPostTemplate = ({ data, pageContext }) => {
       <header className="pageHeader">
         <h1 className="pageTitle">{post.frontmatter.title}</h1>
         <p className="pageSubTitle">{post.frontmatter.subtitle}</p>
-        <p className={styles.date}>{post.frontmatter.date}</p>
+        <div className={styles.postInfo}>
+          <p className={styles.date}>{post.frontmatter.date}</p>
+          <a
+            className={cx(styles.editLink, 'actualLink')}
+            href={`${baseUrl + editContentPath + slug}index.mdx`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconGithub /> <span className="fauxLink">Edit Post</span>
+          </a>
+        </div>
       </header>
       <div className="textWidth">
         <MDXRenderer className>{post.body}</MDXRenderer>
@@ -57,6 +69,10 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        repo {
+          baseUrl
+          editContentPath
+        }
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {
