@@ -66,6 +66,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-mdx-embed`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
