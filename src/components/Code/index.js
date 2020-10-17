@@ -52,21 +52,23 @@ export const Code = ({
         {...props}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={style}>
-            <button
-              type="button"
-              onClick={() => copyButton(codeString)}
-              className={styles.copyButton}
-            >
-              {!isCopied ? 'Copy' : 'Copied'}
-            </button>
-            {tokens.map((line, i) => (
-              <div {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
+          <pre data-language={language} className={className} style={style}>
+            <code>
+              <button
+                type="button"
+                onClick={() => copyButton(codeString)}
+                className={styles.copyButton}
+              >
+                {!isCopied ? 'Copy' : 'Copied'}
+              </button>
+              {tokens.map((line, i) => (
+                <div {...getLineProps({ line, key: i })}>
+                  {line.map((token, key) => (
+                    <span {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              ))}
+            </code>
           </pre>
         )}
       </Highlight>
