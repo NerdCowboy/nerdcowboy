@@ -28,6 +28,39 @@
     box-shadow: rem(0 0 10px) rgba($brown-1000, 0.1);
   }
 
+  pre[data-language]::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    color: white;
+    padding: rem(3px 5px);
+    border-radius: 0.25rem 0.25rem 0 0;
+    width: 100%;
+  }
+
+  pre[data-language='css']::before {
+    background-color: #357abe;
+  }
+
+  pre[data-language='html']::before {
+    background-color: #de633e;
+  }
+
+  pre[data-language='jsx']::before {
+    background-color: #82d7f7;
+    color: $black;
+  }
+
+  pre[data-language='js'],
+  pre[data-language='json'] {
+    &::before {
+      background-color: #ecdc68;
+      color: $black;
+    }
+  }
+
   textarea {
     padding: 1rem !important;
     font-size: 0.85rem !important;
@@ -50,5 +83,16 @@
       font-family: sans-serif;
       border-bottom-right-radius: 0.2em;
     }
+  }
+
+  .copyButton {
+    @include resetButton();
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    padding: rem(5px);
+    font-family: $sans-serif;
+    font-size: rem(12px);
   }
 }

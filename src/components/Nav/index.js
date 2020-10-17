@@ -11,6 +11,7 @@ import { BorderStrap } from '../svgs/BorderStrap'
 import { IconGithub, IconTwitter, IconLinkedIn } from '../Icons'
 import { BorderRounded } from '../svgs/BorderRounded'
 import { PhoneLink } from '../PhoneLink'
+import Tooltip from '../Tooltip'
 
 const Nav = () => (
   <div className={styles.navContainer}>
@@ -21,34 +22,37 @@ const Nav = () => (
 
         <ul className={styles.social}>
           <li className={styles.item}>
-            <a
-              className={styles.socialLink}
-              href="https://twitter.com/NerdCowboy"
-              title="Twitter"
-            >
-              <VisuallyHidden>Twitter</VisuallyHidden>
-              <IconTwitter className={styles.socialIcon} />
-            </a>
+            <Tooltip label="Twitter" aria-label="Go to my Twitter">
+              <a
+                className={styles.socialLink}
+                href="https://twitter.com/NerdCowboy"
+                title="Twitter"
+              >
+                <IconTwitter className={styles.socialIcon} />
+              </a>
+            </Tooltip>
           </li>
           <li className={styles.item}>
-            <a
-              className={styles.socialLink}
-              href="https://github.com/NerdCowboy"
-              title="Github"
-            >
-              <VisuallyHidden>Github</VisuallyHidden>
-              <IconGithub className={styles.socialIcon} />
-            </a>
+            <Tooltip label="Github" aria-label="Go to my GitHub">
+              <a
+                className={styles.socialLink}
+                href="https://github.com/NerdCowboy"
+                title="Github"
+              >
+                <IconGithub className={styles.socialIcon} />
+              </a>
+            </Tooltip>
           </li>
           <li className={styles.item}>
-            <a
-              className={styles.socialLink}
-              href="https://www.linkedin.com/in/nerdcowboy/"
-              title="LinkedIn"
-            >
-              <VisuallyHidden>LinkedIn</VisuallyHidden>
-              <IconLinkedIn className={styles.socialIcon} />
-            </a>
+            <Tooltip label="LinkedIn" aria-label="Go to my LinkedIn">
+              <a
+                className={styles.socialLink}
+                href="https://www.linkedin.com/in/nerdcowboy/"
+                title="LinkedIn"
+              >
+                <IconLinkedIn className={styles.socialIcon} />
+              </a>
+            </Tooltip>
           </li>
         </ul>
       </div>
