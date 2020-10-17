@@ -145,3 +145,23 @@ main {
 .aside {
   line-height: 1.2;
 }
+
+[data-testid='general-observer'] {
+  @include media('>xs') {
+    width: 80vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -40vw;
+    margin-right: -40vw;
+  }
+
+  @include media('>1500px') {
+    width: 1200px;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -600px;
+    margin-right: -600px;
+  }
+}
