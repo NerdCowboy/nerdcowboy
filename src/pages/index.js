@@ -81,7 +81,7 @@ const IndexPage = () => {
   `)
   return (
     <>
-      <SEO description="Brent Larson wrangles code and pixels at Tivity Health as a Sr. UI/UX developer, and is an organizer for IXDA." />
+      <SEO description="Brent Larson wrangles code and pixels at Tivity Health as a Sr. UI/UX developer" />
       <div>
         {/* Intro */}
         <div className={styles.intro}>
@@ -97,10 +97,7 @@ const IndexPage = () => {
             <p>
               I wrangle code and pixels at{' '}
               <a href="https://tivityhealth.com">Tivity Health</a> as a Sr.
-              UI/UX Developer, and I'm an organizer for{' '}
-              <a href="https://www.meetup.com/IXDA-Phoenix/">
-                <abbr title="Interaction Design Association">IxDA</abbr> Phoenix
-              </a>
+              UI/UX Developer
             </p>
           </div>
         </div>

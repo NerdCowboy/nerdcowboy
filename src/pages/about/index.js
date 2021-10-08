@@ -24,17 +24,14 @@ const AboutPage = () => {
     <>
       <SEO
         title="About"
-        description="Brent Larson wrangles code and pixels at Tivity Health as a Sr. UI/UX developer, and is an organizer for IXDA."
+        description="Brent Larson wrangles code and pixels at Tivity Health as a Sr. UI/UX developer"
       />
       <header className={cx('pageHeader', styles.aboutHeader)}>
         <h1 className="pageTitle">About Me</h1>
         <p className="pageSubTitle">
           I wrangle code and pixels at{' '}
           <a href="https://tivityhealth.com">Tivity Health</a> as a Sr. UI/UX
-          Developer, and I'm an organizer for{' '}
-          <a href="https://www.meetup.com/IXDA-Phoenix/">
-            <abbr title="Interaction Design Association">IxDA</abbr> Phoenix
-          </a>
+          Developer
         </p>
       </header>
 
@@ -60,9 +57,9 @@ const AboutPage = () => {
         </p>
         <h3>How I Work</h3>
         <p>
-          Many designers get stuck in the trap of creating design artificats
-          that get them no closer to a solution. When I create mockups, I refer
-          to them as "conversation pieces."{' '}
+          Many designers get stuck in the trap of creating design artifacts that
+          get them no closer to a solution. When I create mockups, I refer to
+          them as "conversation pieces."{' '}
           {/* TODO: add back link when article is finished */}
           {/* <Link to="/blog/design-artifacts/">“conversation pieces.”</Link>{' '} */}
           They’re meant to be iterated on and adjusted to meet deadlines.
@@ -111,11 +108,10 @@ const AboutPage = () => {
           improvement.
         </p>
         <p>
-          I’m an active advocate for the local UX community, serving as an event
-          organizer and website designer/developer for{' '}
+          I’m an advocate for the local UX community, formerly serving as an
+          event organizer and website designer/developer for{' '}
           <abbr title="Interaction Design Association">IxDA</abbr> Phoenix and I
-          frequently offer mentorship to colleagues and those looking to get
-          into the industry.
+          mentor colleagues and those looking to get into the industry.
         </p>
 
         <h3>Getting Personal</h3>
