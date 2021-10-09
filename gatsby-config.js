@@ -51,11 +51,10 @@ module.exports = {
         path: `${__dirname}/src/media`,
       },
     },
-    `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-sass-resources`,
+      resolve: 'gatsby-plugin-sass',
       options: {
-        resources: `./src/styles/resources.scss`,
+        data: `@import "${__dirname}/src/styles/resources";`,
       },
     },
     {
