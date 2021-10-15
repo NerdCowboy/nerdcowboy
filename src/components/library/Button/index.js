@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 import cx from 'classnames'
 import { Link } from 'gatsby'
 
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 
 const Button = React.forwardRef(
   ({ children, className, variant, isLink, type, as, ...props }, ref) => {

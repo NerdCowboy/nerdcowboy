@@ -54,7 +54,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        data: `@import "${__dirname}/src/styles/resources";`,
+        additionalData: `
+          @import "${__dirname}/src/styles/resources";`,
       },
     },
     {

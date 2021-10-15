@@ -5,7 +5,7 @@ import { navigate } from 'gatsby'
 import { motion } from 'framer-motion'
 
 import Button from '../../components/library/Button'
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 import { PhoneLink } from '../../components/PhoneLink'
 import SEO from '../../components/seo'
 
@@ -97,7 +97,7 @@ const ContactPage = () => {
   return (
     <>
       <SEO title="Contact" />
-      <header className={cx('pageHeader', styles.aboutHeader)}>
+      <header className="pageHeader">
         <h1 className="pageTitle">Contact</h1>
         <p className="pageSubTitle">
           Have a project you'd like to hire me for or just want to say howdy?

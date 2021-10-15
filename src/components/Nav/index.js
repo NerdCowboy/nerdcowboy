@@ -6,7 +6,7 @@ import cx from 'classnames'
 
 import LogoEmblem from '../LogoEmblem'
 import LogoText from '../LogoText'
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 import { BorderStrap } from '../svgs/BorderStrap'
 import { IconGithub, IconTwitter, IconLinkedIn } from '../Icons'
 import { BorderRounded } from '../svgs/BorderRounded'
@@ -18,10 +18,10 @@ const Nav = () => (
     {/* Top Header */}
     <div className={styles.header}>
       <div className={styles.topRow}>
-        <PhoneLink className={cx(styles.socialLink)} />
+        <PhoneLink className={styles.socialLink} />
 
         <ul className={styles.social}>
-          <li className={styles.item}>
+          <li>
             <Tooltip label="Twitter" aria-label="Go to my Twitter">
               <a
                 className={styles.socialLink}
@@ -32,7 +32,7 @@ const Nav = () => (
               </a>
             </Tooltip>
           </li>
-          <li className={styles.item}>
+          <li>
             <Tooltip label="Github" aria-label="Go to my GitHub">
               <a
                 className={styles.socialLink}
@@ -43,7 +43,7 @@ const Nav = () => (
               </a>
             </Tooltip>
           </li>
-          <li className={styles.item}>
+          <li>
             <Tooltip label="LinkedIn" aria-label="Go to my LinkedIn">
               <a
                 className={styles.socialLink}
@@ -67,14 +67,11 @@ const Nav = () => (
           {/* Top Border */}
           <div className={styles.topBorderWrapper}>
             <div className={styles.topBorder}>
-              <BorderStrap className={cx(styles.borderStrap, styles.isLeft)} />
+              <BorderStrap />
               <BorderRounded
                 className={cx(styles.borderRounded, styles.isRight)}
               />
-              <BorderStrap
-                className={cx(styles.borderStrap, styles.isRight)}
-                side="right"
-              />
+              <BorderStrap side="right" />
             </div>
             <Link
               to="/"
@@ -84,21 +81,20 @@ const Nav = () => (
               <LogoEmblem className={styles.logo} />
               <VisuallyHidden>Home</VisuallyHidden>
             </Link>
-            <div className={cx(styles.topBorder, styles.topBorderRight)}>
+            <div className={styles.topBorder}>
               <BorderRounded
                 className={cx(styles.borderRounded, styles.isLeft)}
                 side="right"
               />
               <BorderStrap
                 side="right"
-                className={cx(styles.borderStrap, styles.isRight)}
+                className={styles.isRight}
               />
             </div>
           </div>
         </li>
         <li>
           <Link
-            className={styles.navLink}
             to="/about/"
             activeClassName={styles.isActive}
           >
@@ -107,7 +103,6 @@ const Nav = () => (
         </li>
         <li>
           <Link
-            className={styles.navLink}
             to="/blog/"
             activeClassName={styles.isActive}
           >
@@ -117,7 +112,6 @@ const Nav = () => (
 
         <li>
           <Link
-            className={styles.navLink}
             to="/uses/"
             activeClassName={styles.isActive}
           >
@@ -126,7 +120,6 @@ const Nav = () => (
         </li>
         <li>
           <Link
-            className={styles.navLink}
             to="/contact/"
             activeClassName={styles.isActive}
           >

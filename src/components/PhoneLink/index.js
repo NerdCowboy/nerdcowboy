@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 import { IconCowbell } from '../Icons'
 import moreCowbellSrc from '../../media/audio/gotta-have-more-cowbell-loud.m4a'
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 
 export const PhoneLink = ({ className, ...props }) => {
   const [hoverCount, setHoverCount] = useState(0)
@@ -27,7 +27,7 @@ export const PhoneLink = ({ className, ...props }) => {
         onMouseEnter={gottaHaveMoreCowbell}
         {...props}
       >
-        <IconCowbell className={styles.socialIcon} />
+        <IconCowbell />
         <span className={styles.phoneNumber}>480-COWBELL</span>
       </a>
     </>

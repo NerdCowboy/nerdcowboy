@@ -1,4 +1,8 @@
-@import "~sass-rem/_rem";
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:string';
+@use '~sass-rem/_rem';
 
 // Base browser font-size
 $browser-context: 16;
@@ -10,11 +14,11 @@ $browser-context: 16;
 // Convert PX/Unitless to Ems
 // https://css-tricks.com/snippets/sass/px-to-em-functions/
 @function em($pixels, $context: $browser-context) {
-  @if (unitless($pixels)) {
+  @if (math.is-unitless($pixels)) {
     $pixels: $pixels * 1px;
   }
 
-  @if (unitless($context)) {
+  @if (math.is-unitless($context)) {
     $context: $context * 1px;
   }
 
@@ -22,11 +26,11 @@ $browser-context: 16;
 }
 
 @function encodecolor($string) {
-  @if type-of($string) == "color" {
-    $hex: str-slice(ie-hex-str($string), 4);
-    $string: unquote("#{$hex}");
+  @if meta.type-of($string) == 'color' {
+    $hex: string.slice(color.ie-hex-str($string), 4);
+    $string: string.unquote('#{$hex}');
   }
-  $string: "%23" + $string;
+  $string: '%23' + $string;
   @return $string;
 }
 
@@ -38,29 +42,29 @@ $browser-context: 16;
   //
   // Add missing namespace
   //
-  @if not str-index($svg, xmlns) {
-    $svg: str-replace($svg, "<svg", '<svg xmlns="http://www.w3.org/2000/svg"');
+  @if not string.index($svg, xmlns) {
+    $svg: str-replace($svg, '<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
   }
   //
   // Chunk up string in order to avoid
   // "stack level too deep" error
   //
-  $encoded: "";
+  $encoded: '';
   $slice: 2000;
   $index: 0;
-  $loops: ceil(str-length($svg) / $slice);
+  $loops: math.ceil(string.length($svg) / $slice);
   @for $i from 1 through $loops {
-    $chunk: str-slice($svg, $index, $index + $slice - 1);
+    $chunk: string.slice($svg, $index, $index + $slice - 1);
     //
     // Encode
     //
     $chunk: str-replace($chunk, '"', "'");
-    $chunk: str-replace($chunk, "%", "%25");
-    $chunk: str-replace($chunk, "#", "%23");
-    $chunk: str-replace($chunk, "{", "%7B");
-    $chunk: str-replace($chunk, "}", "%7D");
-    $chunk: str-replace($chunk, "<", "%3C");
-    $chunk: str-replace($chunk, ">", "%3E");
+    $chunk: str-replace($chunk, '%', '%25');
+    $chunk: str-replace($chunk, '#', '%23');
+    $chunk: str-replace($chunk, '{', '%7B');
+    $chunk: str-replace($chunk, '}', '%7D');
+    $chunk: str-replace($chunk, '<', '%3C');
+    $chunk: str-replace($chunk, '>', '%3E');
     //
     // The maybe list
     //
@@ -81,20 +85,20 @@ $browser-context: 16;
     $encoded: #{$encoded}#{$chunk};
     $index: $index + $slice;
   }
-  @return url("data:image/svg+xml,#{$encoded}");
+  @return url('data:image/svg+xml,#{$encoded}');
 }
 // Background svg mixin
 @mixin background-svg($svg) {
   background-image: svg-url($svg);
 }
 // Helper function to replace characters in a string
-@function str-replace($string, $search, $replace: "") {
-  $index: str-index($string, $search);
+@function str-replace($string, $search, $replace: '') {
+  $index: string.index($string, $search);
   @return if(
     $index,
-    str-slice($string, 1, $index - 1) + $replace +
+    string.slice($string, 1, $index - 1) + $replace +
       str-replace(
-        str-slice($string, $index + str-length($search)),
+        string.slice($string, $index + string.length($search)),
         $search,
         $replace
       ),

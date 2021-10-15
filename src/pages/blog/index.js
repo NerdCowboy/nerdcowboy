@@ -1,9 +1,9 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import cx from 'classnames'
 
 import ArticlesPreview from '../../components/ArticlesPreview'
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 import SEO from '../../components/seo'
 
 const Blog = ({ data }) => {
@@ -34,12 +34,12 @@ const Blog = ({ data }) => {
             className={styles.articleLink}
             key={article.node.id}
           >
-            <div className={styles.articleContent}>
+            <div>
               <header>
                 <h3 className={styles.articleTitle}>
                   {article.node.frontmatter.title}
                 </h3>
-                <p className={styles.subtitle}>
+                <p>
                   {article.node.frontmatter.subtitle}
                 </p>
               </header>

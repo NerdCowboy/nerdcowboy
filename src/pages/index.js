@@ -11,7 +11,7 @@ import Twenty47Logo from '../media/svgs/twenty47-logo.svg'
 import ArticlesPreview from '../components/ArticlesPreview'
 import { IconCircleRightArrow } from '../components/Icons'
 
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 import Button from '../components/library/Button'
 import SEO from '../components/seo'
 
@@ -93,7 +93,7 @@ const IndexPage = () => {
             />
           </div>
           <div className={styles.introCopy}>
-            <h1 className={styles.introTitle}>Howdy! I’m Brent Larson</h1>
+            <h1>Howdy! I’m Brent Larson</h1>
             <p>
               I wrangle code and pixels at{' '}
               <a href="https://tivityhealth.com">Tivity Health</a> as a Sr.
@@ -108,21 +108,13 @@ const IndexPage = () => {
             I’ve Worked With
           </h2>
           <div className={styles.logos}>
-            {/* <div className={styles.logoWrapper}> */}
-            <WalmartLogo className={styles.walmartLogo} />
-            {/* </div> */}
+            <WalmartLogo  />
             <div className={styles.border} />
-            {/* <div className={styles.logoWrapper}> */}
-            <TivityLogo className={styles.tivityLogo} />
-            {/* </div> */}
+            <TivityLogo />
             <div className={styles.border} />
-            {/* <div className={styles.logoWrapper}> */}
             <Twenty47Logo className={styles.twenty47Logo} />
-            {/* </div> */}
             <div className={styles.border} />
-            {/* <div className={styles.logoWrapper}> */}
             <CvsLogo />
-            {/* </div> */}
           </div>
         </div>
 
@@ -134,7 +126,7 @@ const IndexPage = () => {
               Brent has an incredible talent for arranging a complex set of
               pieces into an intuitive product.
             </p>
-            <footer className={styles.quoteAuthor}>
+            <footer>
               <cite>
                 <a
                   href="https://linkedin.com/in/nerdcowboy#recommendations"
@@ -168,7 +160,7 @@ const IndexPage = () => {
               Working with Brent feels like working with a team of 2 to 3
               people.
             </p>
-            <footer className={styles.quoteAuthor}>
+            <footer>
               <cite>
                 <a
                   href="https://linkedin.com/in/nerdcowboy#recommendations"
@@ -201,7 +193,7 @@ const IndexPage = () => {
               Brent is an amazing colleague to work with, and expertly comes up
               with new solutions to complex problems.
             </p>
-            <footer className={styles.quoteAuthor}>
+            <footer>
               <cite>
                 <a
                   href="https://linkedin.com/in/nerdcowboy#recommendations"

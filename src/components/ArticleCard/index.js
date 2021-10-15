@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import { IconGun, IconBullet } from '../Icons'
 import purtyWood from '../../media/images/purty-wood-horizontal.jpg'
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 
 const ArticleCard = ({ article }) => (
   <>

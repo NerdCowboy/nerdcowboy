@@ -1,7 +1,7 @@
 import React from 'react'
 import ArticleCard from '../ArticleCard'
 
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 
 const ArticlePreview = ({ articles }) => (
   <div className={styles.articlesWrapper}>

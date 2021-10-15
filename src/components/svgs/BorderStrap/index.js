@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 
 export const BorderStrap = ({ side = 'left', className }) => (
   <svg

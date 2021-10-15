@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 
 import tumbleweed from './images/404-tumbleweed.svg'
 import SEO from '../../components/seo'

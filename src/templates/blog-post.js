@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import cx from 'classnames'
 
 import SEO from '../components/seo'
-import styles from './blog-post-styles.module.scss'
+import * as styles from  './blog-post-styles.module.scss'
 import { IconGithub } from '../components/Icons'
 
 const BlogPostTemplate = ({ data, pageContext }) => {

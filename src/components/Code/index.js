@@ -3,7 +3,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import theme from 'prism-react-renderer/themes/nightOwl'
 
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
 
 export const Code = ({
   codeString,

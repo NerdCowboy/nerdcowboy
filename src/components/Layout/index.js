@@ -5,7 +5,8 @@ import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 import '@reach/skip-nav/styles.css'
 
 import Nav from '../Nav'
-import styles from './styles.module.scss'
+import * as styles from  './styles.module.scss'
+// import './styles/resources'
 import { IconGithub } from '../Icons'
 
 const Layout = ({ children }) => (
