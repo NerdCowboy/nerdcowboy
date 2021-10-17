@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
-import Img from 'gatsby-image'
 import cx from 'classnames'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import WalmartLogo from '../media/svgs/walmart-logo.svg'
 import CvsLogo from '../media/svgs/cvs-health-logo.svg'
@@ -18,41 +18,6 @@ import SEO from '../components/seo'
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      headshot: file(relativePath: { eq: "images/headshot-square.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 240, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
-      }
-
-      # Testimonials
-      jared: file(relativePath: { eq: "images/recommendation-jared.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
-      }
-      bas: file(relativePath: { eq: "images/recommendation-bas.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
-      }
-      roland: file(relativePath: { eq: "images/recommendation-roland.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 100, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
-      }
-
       # Blog
       allMdx(
         limit: 2
@@ -86,9 +51,13 @@ const IndexPage = () => {
         {/* Intro */}
         <div className={styles.intro}>
           <div className={styles.headshotWrapper}>
-            <Img
+            <StaticImage
+              placeholder="blurred"
               className={cx(styles.borderCircleImg, styles.headshotImg)}
-              fluid={data.headshot.childImageSharp.fluid}
+              loading="eager"
+              aspectRatio={1}
+              formats={["auto", "avif", "webp"]}
+              src="../media/images/headshot-square.jpg"
               alt="Headshot of me looking dapper"
             />
           </div>
@@ -134,8 +103,9 @@ const IndexPage = () => {
                   className={styles.quoteLink}
                 >
                   <div className={styles.quoteImgWrapper}>
-                    <Img
-                      fluid={data.jared.childImageSharp.fluid}
+                    <StaticImage
+                      placeholder="blurred"
+                      src="../media/images/recommendation-jared.jpg"
                       className={styles.borderCircleImg}
                       alt="Jared Ray"
                     />
@@ -168,8 +138,11 @@ const IndexPage = () => {
                   className={styles.quoteLink}
                 >
                   <div className={styles.quoteImgWrapper}>
-                    <Img
-                      fluid={data.bas.childImageSharp.fluid}
+                    <StaticImage
+                      placeholder="blurred"
+                      src="../media/images/recommendation-bas.jpg"
+                      aspectRatio={1}
+                      formats={["auto", "avif", "webp"]}
                       className={styles.borderCircleImg}
                       alt="Bas Van Helvoort"
                     />
@@ -201,8 +174,11 @@ const IndexPage = () => {
                   className={styles.quoteLink}
                 >
                   <div className={styles.quoteImgWrapper}>
-                    <Img
-                      fluid={data.roland.childImageSharp.fluid}
+                    <StaticImage
+                      placeholder="blurred"
+                      src="../media/images/recommendation-roland.jpg"
+                      aspectRatio={1}
+                      formats={["auto", "avif", "webp"]}
                       className={styles.borderCircleImg}
                       alt="Roland Coops"
                     />

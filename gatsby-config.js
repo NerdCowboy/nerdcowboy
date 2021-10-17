@@ -67,47 +67,27 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx-embed`,
+
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
-        // a workaround to solve mdx-remark plugin compat issue
-        // https://github.com/gatsbyjs/gatsby/issues/15486
-        // plugins: [`gatsby-remark-videos`, `gatsby-remark-images`],
-        plugins: [`gatsby-remark-images`],
         gatsbyRemarkPlugins: [
-          // {
-          //   resolve: `gatsby-remark-videos`,
-          //   options: {
-          //     pipelines: [
-          //       {
-          //         name: 'vp9',
-          //         transcode: (chain) =>
-          //           chain
-          //             .videoCodec('libvpx-vp9')
-          //             .noAudio()
-          //             .outputOptions(['-crf 20', '-b:v 0']),
-          //         maxHeight: 480,
-          //         maxWidth: 900,
-          //         fileExtension: 'webm',
-          //       },
-          //       {
-          //         name: 'h264',
-          //         transcode: (chain) =>
-          //           chain
-          //             .videoCodec('libx264')
-          //             .noAudio()
-          //             .addOption('-profile:v', 'main')
-          //             .addOption('-pix_fmt', 'yuv420p')
-          //             .outputOptions(['-movflags faststart'])
-          //             .videoBitrate('1000k'),
-          //         maxHeight: 480,
-          //         maxWidth: 900,
-          //         fileExtension: 'mp4',
-          //       },
-          //     ],
-          //   },
-          // },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 655,
+              withAvif: true,
+              withWebp: true,
+            },
+          },
           {
             resolve: `gatsby-remark-embedder`,
             options: {
@@ -117,13 +97,6 @@ module.exports = {
               services: {
                 // The service-specific options by the name of the service
               },
-            },
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-              withWebp: true,
             },
           },
           {
@@ -143,8 +116,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-feed-mdx`,
       options: {

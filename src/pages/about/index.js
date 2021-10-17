@@ -1,24 +1,12 @@
 import React from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { Link } from 'gatsby'
+import { StaticImage } from "gatsby-plugin-image"
 import cx from 'classnames'
 
 import * as styles from  './styles.module.scss'
 import SEO from '../../components/seo'
 
 const AboutPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      headshot: file(relativePath: { eq: "images/headshot-wide.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 16000, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
-            ...GatsbyImageSharpFluidLimitPresentationSize
-          }
-        }
-      }
-    }
-  `)
 
   return (
     <>
@@ -36,9 +24,14 @@ const AboutPage = () => {
       </header>
 
       <div className={styles.headshotWrapper}>
-        <Img
+        <StaticImage
           className={styles.headshot}
-          fluid={data.headshot.childImageSharp.fluid}
+          loading="eager"
+          formats={["auto", "avif", "webp"]}
+          layout="fullWidth"
+          placeholder="blurred"
+          aspectRatio={1601/593}
+          src="../../media/images/headshot-wide.jpg"
           alt="Headshot of me looking dapper"
         />
       </div>
