@@ -21,7 +21,7 @@ export const PhoneLink = ({ className, ...props }) => {
         <source src={moreCowbellSrc} type="audio/mp4" />
       </audio>
       <a
-        href="tel:1-480-268-2355"
+        href="tel:1-480-269-2355"
         className={cx(styles.phoneLink, className)}
         onClick={gottaHaveMoreCowbell}
         onMouseEnter={gottaHaveMoreCowbell}
