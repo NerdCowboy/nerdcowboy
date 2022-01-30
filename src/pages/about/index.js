@@ -12,14 +12,14 @@ const AboutPage = () => {
     <>
       <SEO
         title="About"
-        description="Brent Larson wrangles code and pixels at Tivity Health as a Sr. UI/UX developer"
+        description="Brent Larson wrangles code and pixels at Blackpoint Cyber as a Sr. UI/UX developer"
       />
       <header className={cx('pageHeader', styles.aboutHeader)}>
         <h1 className="pageTitle">About Me</h1>
         <p className="pageSubTitle">
           I wrangle code and pixels at{' '}
-          <a href="https://tivityhealth.com">Tivity Health</a> as a Sr. UI/UX
-          Developer
+          <a href="https://blackpointcyber.com/">Blackpoint Cyber</a> as a Sr. UI/UX
+          Engineer
         </p>
       </header>
 
