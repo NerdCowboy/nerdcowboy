@@ -3,13 +3,13 @@ import { graphql, Link } from 'gatsby'
 import cx from 'classnames'
 
 import ArticlesPreview from '../../components/ArticlesPreview'
-import * as styles from  './styles.module.scss'
+import * as styles from './styles.module.scss'
 import SEO from '../../components/seo'
 
 const Blog = ({ data }) => {
   const posts = data.allMdx.edges
   const previewArticles = posts.slice(0, 2)
-  // const restOfArticles = posts.slice(2)
+  const restOfArticles = posts.slice(2)
   const pageDescription =
     'My thoughts, tips, and tricks on front-end development and UI/UX Design'
   return (
@@ -27,8 +27,8 @@ const Blog = ({ data }) => {
       <ArticlesPreview articles={previewArticles} />
 
       <div className={cx(styles.archive, 'textWidth')}>
-        {/* <h2 className={styles.archiveTitle}>More Nerd Posts</h2> */}
-        {/* {restOfArticles.map((article) => (
+        <h2 className={styles.archiveTitle}>More Nerd Posts</h2>
+        {restOfArticles.map((article) => (
           <Link
             to={article.node.fields.slug}
             className={styles.articleLink}
@@ -39,14 +39,12 @@ const Blog = ({ data }) => {
                 <h3 className={styles.articleTitle}>
                   {article.node.frontmatter.title}
                 </h3>
-                <p>
-                  {article.node.frontmatter.subtitle}
-                </p>
+                <p>{article.node.frontmatter.subtitle}</p>
               </header>
               {article.node.frontmatter.description || article.node.excerpt}
             </div>
           </Link>
-        ))} */}
+        ))}
       </div>
     </>
   )
