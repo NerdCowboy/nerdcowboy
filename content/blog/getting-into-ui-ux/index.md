@@ -33,6 +33,11 @@ http://www.nngroup.com/articles/
 And of course, I'd be remiss if I didn't mention Don's book, [The Design of Everyday Things](https://smile.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654)
 I still have yet to read this 😬, but literally everyone says it's a must read, so I'll be checking it out soon.
 
+### Baymard Institute
+
+Baymard Institue largely focuses on e-commerce UX. However, I find many of their findings can be extrapolated. What I love about Baymard is that they don't do any opinion pieces and just stick to posting UX research findings.
+https://baymard.com/blog
+
 ### Luke Wroblewski
 
 Luke Wroblewski has amazing insights on usability—particularly on mobile. He's been quiet lately, but there's still a lot to learn from his older content.  
