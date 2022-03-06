@@ -11,7 +11,7 @@ But the most important thing to do is to just start practicing.
 
 The easy way is to take a decently designed, but flawed product (don't do terrible, that's too easy!) and redesign it, do some user tests, and refine it.
 
-But the best way is to reach out to some non-profits and offer to do some pro bono work for them. If you're able, try to find a developer to help you bring your designs to life—there are plenty of fresh bootcamp developers out there!
+But the best way is to reach out to some non-profits and offer to do some pro bono work for them. If you're able, try to find a developer to help you bring your designs to life—there are plenty of fresh bootcamp developers out there that are in the same boat.
 
 I emphasize working with real stakeholders because that skill is probably one of the most underdeveloped out there, but it's absolutely critical to having a successful UX design career.
 
@@ -45,7 +45,7 @@ http://www.lukew.com/ff/
 
 ### Aarron Walter
 
-Designing for emotion is a favorite of mine. I refer back to it anytime I work for branding on a company as it has some exercises in there to help you create a brand persona which helps keep your design and copy true to the core.
+Designing for Emotion is a favorite of mine. I refer back to it anytime I work for branding on a company as it has some exercises in there to help you create a brand persona which helps keep your design and copy true to the core.
 [Designing for Emotion](http://www.abookapart.com/products/designing-for-emotion)
 
 ### Jared Spool
@@ -76,9 +76,9 @@ I learned UX well before this was even a thing, so unfortunately, I don't have a
 
 I don't want to get too negative here, but suffice to say there's a lot of unsubstantiated opinions that get passed around as facts or best practices.
 
-Since our industry incorporates a lot of psychology, one of the most derided fields of science, it naturally brings along with it the issues of the [replication crisis](https://www.psychologytoday.com/us/basics/replication-crisis). This is why it's always important to do user testing with _your_ users as not all research results translate across websites.
+Since our industry incorporates a lot of psychology, one of the most derided fields of science, it naturally brings along with it the issues of the [replication crisis](https://www.psychologytoday.com/us/basics/replication-crisis). This is why it's always important to do user testing with _your_ users as not all research results translate.
 
-When you're first starting out, I would be careful about Medium. There are a lot of really great articles, but there's also a lot of low quality and just plain wrong content. It'll be more difficult for you to discern the wheat from the chaff when you're first starting out, so I typically recommend staying away from anything that isn't a well known UX publication such as [UX Planet](https://uxplanet.org/).
+When you're first starting out, I would be careful about Medium. There are a lot of really great articles, but there's also a lot of low quality and just plain wrong content. It'll be more difficult for you to discern the wheat from the chaff when you're first starting out, so I typically recommend staying away from anything that isn't from a well known UX publication such as [UX Planet](https://uxplanet.org/).
 
 ### Good luck
 
@@ -86,4 +86,4 @@ I wish you the best in your journey into UI/UX design! I hope these resources he
 
 If you're in the Phoenix valley, [drop me a line](https://nerdcowboy.com/contact/) and I'd love to meet up for coffee and help you in any way I can.
 
-And don't forget to connect with me on [Twitter](<(https://twitter.com/nerdcowboy)>) and [LinkedIn](https://linkedin.com/in/nerdcowboy).
+And don't forget to connect with me on [Twitter](https://twitter.com/nerdcowboy) and [LinkedIn](https://linkedin.com/in/nerdcowboy).
