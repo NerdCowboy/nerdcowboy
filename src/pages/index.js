@@ -11,7 +11,7 @@ import Twenty47Logo from '../media/svgs/twenty47-logo.svg'
 import ArticlesPreview from '../components/ArticlesPreview'
 import { IconCircleRightArrow } from '../components/Icons'
 
-import * as styles from  './styles.module.scss'
+import * as styles from './styles.module.scss'
 import Button from '../components/library/Button'
 import SEO from '../components/seo'
 
@@ -56,7 +56,7 @@ const IndexPage = () => {
               className={cx(styles.borderCircleImg, styles.headshotImg)}
               loading="eager"
               aspectRatio={1}
-              formats={["auto", "avif", "webp"]}
+              formats={['auto', 'avif', 'webp']}
               src="../media/images/headshot-square.jpg"
               alt="Headshot of me looking dapper"
             />
@@ -65,8 +65,8 @@ const IndexPage = () => {
             <h1>Howdy! I’m Brent Larson</h1>
             <p>
               I wrangle code and pixels at{' '}
-              <a href="https://tivityhealth.com">Tivity Health</a> as a Sr.
-              UI/UX Developer
+              <a href="https://blackpointcyber.com/">Blackpoint Cyber</a> as a
+              Sr. UI/UX Engineer
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ const IndexPage = () => {
             I’ve Worked With
           </h2>
           <div className={styles.logos}>
-            <WalmartLogo  />
+            <WalmartLogo />
             <div className={styles.border} />
             <TivityLogo />
             <div className={styles.border} />
@@ -142,7 +142,7 @@ const IndexPage = () => {
                       placeholder="blurred"
                       src="../media/images/recommendation-bas.jpg"
                       aspectRatio={1}
-                      formats={["auto", "avif", "webp"]}
+                      formats={['auto', 'avif', 'webp']}
                       className={styles.borderCircleImg}
                       alt="Bas Van Helvoort"
                     />
@@ -178,7 +178,7 @@ const IndexPage = () => {
                       placeholder="blurred"
                       src="../media/images/recommendation-roland.jpg"
                       aspectRatio={1}
-                      formats={["auto", "avif", "webp"]}
+                      formats={['auto', 'avif', 'webp']}
                       className={styles.borderCircleImg}
                       alt="Roland Coops"
                     />
