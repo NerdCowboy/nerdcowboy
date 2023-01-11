@@ -40,7 +40,7 @@
     "gatsby-remark-smartypants": "^4.11.0",
     "gatsby-remark-videos": "^0.4.1",
     "gatsby-source-filesystem": "^3.14.0",
-    "gatsby-transformer-remark": "^4.11.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^3.14.0",
     "mdx-embed": "0.0.22",
     "mdx-utils": "^0.2.0",
