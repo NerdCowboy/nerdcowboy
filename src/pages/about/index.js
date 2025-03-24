@@ -1,25 +1,24 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from 'gatsby-plugin-image'
 import cx from 'classnames'
 
-import * as styles from  './styles.module.scss'
+import * as styles from './styles.module.scss'
 import SEO from '../../components/seo'
 
 const AboutPage = () => {
-
   return (
     <>
       <SEO
         title="About"
-        description="Brent Larson wrangles code and pixels at Blackpoint Cyber as a Sr. UI/UX developer"
+        description="Brent Larson wrangles code and pixels at Hearst Magazines as a Sr. UX developer"
       />
       <header className={cx('pageHeader', styles.aboutHeader)}>
         <h1 className="pageTitle">About Me</h1>
         <p className="pageSubTitle">
           I wrangle code and pixels at{' '}
-          <a href="https://blackpointcyber.com/">Blackpoint Cyber</a> as a Sr. UI/UX
-          Engineer
+          <a href="https://www.hearst.com/magazines">Hearst Magazines</a> as a
+          Sr. UX Engineer
         </p>
       </header>
 
@@ -27,10 +26,10 @@ const AboutPage = () => {
         <StaticImage
           className={styles.headshot}
           loading="eager"
-          formats={["auto", "avif", "webp"]}
+          formats={['auto', 'avif', 'webp']}
           layout="fullWidth"
           placeholder="blurred"
-          aspectRatio={1601/593}
+          aspectRatio={1601 / 593}
           src="../../media/images/headshot-wide.jpg"
           alt="Headshot of me looking dapper"
         />
@@ -87,7 +86,7 @@ const AboutPage = () => {
           </a>{' '}
           (used to build this site). Since I’m also a designer, I naturally fell
           into specializing in CSS, which also makes me masochist 🙃. I also
-          care about accessibilty and do my best to make sure my HTML is
+          care about accessibility and do my best to make sure my HTML is
           semantic with proper aria labels and I use colors with good contrast.
           Since I hate wasting time, creating well-organized, maintainable, and
           extensible code is also very important to me.
@@ -114,7 +113,7 @@ const AboutPage = () => {
           with his accounting, it opened up a whole world for me.
         </p>
         <p>
-          I'm currently living in Mesa, Arizona with my beautiful wife,
+          I'm currently living in Glendale, Arizona with my beautiful wife,
           Kimberly, and our handsome dog, Chauncey.
         </p>
         <p>

@@ -65,8 +65,8 @@ const IndexPage = () => {
             <h1>Howdy! I’m Brent Larson</h1>
             <p>
               I wrangle code and pixels at{' '}
-              <a href="https://blackpointcyber.com/">Blackpoint Cyber</a> as a
-              Sr. UI/UX Engineer
+              <a href="https://www.hearst.com/magazines">Hearst Magazines</a> as
+              a Sr. UX Engineer
             </p>
           </div>
         </div>
