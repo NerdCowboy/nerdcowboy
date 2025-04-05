@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 
-import * as styles from  './styles.module.scss'
+import * as styles from './styles.module.scss'
 
 export const Icon = (props) =>
   React.cloneElement(props.children, {
@@ -46,10 +46,10 @@ export const IconCowbell = ({ className }) => (
   </Icon>
 )
 
-export const IconTwitter = ({ className }) => (
+export const IconX = ({ className }) => (
   <Icon className={className}>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24.01">
-      <title>Twitter</title>
+      <title>X</title>
       <g fill="currentColor">
         <path d="M30 2.84a12.46 12.46 0 0 1-3.53 1 6.1 6.1 0 0 0 2.7-3.4 12.44 12.44 0 0 1-3.91 1.47A6.19 6.19 0 0 0 20.77 0a6.11 6.11 0 0 0-6.15 6.06 6 6 0 0 0 .16 1.38A17.57 17.57 0 0 1 2.09 1.11a6 6 0 0 0-.83 3A6 6 0 0 0 4 9.2a6.21 6.21 0 0 1-2.8-.76v.08a6.09 6.09 0 0 0 4.94 5.94 6.25 6.25 0 0 1-2.78.1 6.15 6.15 0 0 0 5.75 4.21 12.47 12.47 0 0 1-7.64 2.59A12.74 12.74 0 0 1 0 21.28 17.62 17.62 0 0 0 9.43 24 17.25 17.25 0 0 0 26.95 6.76v-.78A12.39 12.39 0 0 0 30 2.84z" />
       </g>

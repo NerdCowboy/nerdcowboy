@@ -6,9 +6,9 @@ import cx from 'classnames'
 
 import LogoEmblem from '../LogoEmblem'
 import LogoText from '../LogoText'
-import * as styles from  './styles.module.scss'
+import * as styles from './styles.module.scss'
 import { BorderStrap } from '../svgs/BorderStrap'
-import { IconGithub, IconTwitter, IconLinkedIn } from '../Icons'
+import { IconGithub, IconX, IconLinkedIn } from '../Icons'
 import { BorderRounded } from '../svgs/BorderRounded'
 import { PhoneLink } from '../PhoneLink'
 import Tooltip from '../Tooltip'
@@ -22,13 +22,13 @@ const Nav = () => (
 
         <ul className={styles.social}>
           <li>
-            <Tooltip label="Twitter" aria-label="Go to my Twitter">
+            <Tooltip label="X" aria-label="Go to my X">
               <a
                 className={styles.socialLink}
-                href="https://twitter.com/NerdCowboy"
-                title="Twitter"
+                href="https://x.com/NerdCowboy"
+                title="X"
               >
-                <IconTwitter className={styles.socialIcon} />
+                <IconX className={styles.socialIcon} />
               </a>
             </Tooltip>
           </li>
@@ -86,43 +86,28 @@ const Nav = () => (
                 className={cx(styles.borderRounded, styles.isLeft)}
                 side="right"
               />
-              <BorderStrap
-                side="right"
-                className={styles.isRight}
-              />
+              <BorderStrap side="right" className={styles.isRight} />
             </div>
           </div>
         </li>
         <li>
-          <Link
-            to="/about/"
-            activeClassName={styles.isActive}
-          >
+          <Link to="/about/" activeClassName={styles.isActive}>
             <span>About</span>
           </Link>
         </li>
         <li>
-          <Link
-            to="/blog/"
-            activeClassName={styles.isActive}
-          >
+          <Link to="/blog/" activeClassName={styles.isActive}>
             <span>Blog</span>
           </Link>
         </li>
 
         <li>
-          <Link
-            to="/uses/"
-            activeClassName={styles.isActive}
-          >
+          <Link to="/uses/" activeClassName={styles.isActive}>
             <span>Uses</span>
           </Link>
         </li>
         <li>
-          <Link
-            to="/contact/"
-            activeClassName={styles.isActive}
-          >
+          <Link to="/contact/" activeClassName={styles.isActive}>
             <span>Contact</span>
           </Link>
         </li>
